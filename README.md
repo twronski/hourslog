@@ -33,5 +33,9 @@ May also include reports and statustics related to these logged hours
 + create and migrate postgres database:
   + `docker-compose run --rm app bundle exec rails db:create db:migrate`
 
-### Generate Models
+### Setup Devise and Mailcatcher
+
+### Generate Devise User model
+
+### Generate Application Models
 
