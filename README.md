@@ -28,7 +28,10 @@ Simple application to log work hours related to a project and type of activity
 May be improved with validation process  
 May also include reports and statustics related to these logged hours
 
-### Activities
+### Setup Database
 + Setup database.yml (user: postgres and host: postgres)
 + create and migrate postgres database:
   + `docker-compose run --rm app bundle exec rails db:create db:migrate`
+
+### Generate Models
+
