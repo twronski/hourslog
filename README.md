@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Description
+Simple application to log work hours related to a project and type of activity  
+May be improved with validation process  
+May also include reports and statustics related to these logged hours
