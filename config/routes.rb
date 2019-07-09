@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :bays
+  resources :voltage_levels
+  resources :activities
   resources :reports
   resources :projects
   devise_for :users
