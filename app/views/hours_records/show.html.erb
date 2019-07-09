@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @hours_record.day %>
+</p>
+
+<p>
+  <strong>Man hour:</strong>
+  <%= @hours_record.man_hour %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @hours_record.activity %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @hours_record.project %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @hours_record.user %>
+</p>
+
+<p>
+  <strong>Bay:</strong>
+  <%= @hours_record.bay %>
+</p>
+
+<p>
+  <strong>Voltage level:</strong>
+  <%= @hours_record.voltage_level %>
+</p>
+
+<%= link_to 'Edit', edit_hours_record_path(@hours_record) %> |
+<%= link_to 'Back', hours_records_path %>
