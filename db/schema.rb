@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_09_174056) do
+ActiveRecord::Schema.define(version: 2019_07_10_202715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,12 +27,45 @@ ActiveRecord::Schema.define(version: 2019_07_09_174056) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "projects", force: :cascade do |t|
-    t.string "wbs"
+  create_table "hours_records", force: :cascade do |t|
+    t.date "day"
+    t.decimal "man_hour", precision: 4, scale: 2
+    t.bigint "activity_id"
+    t.bigint "project_id"
+    t.bigint "user_id"
+    t.bigint "bay_id"
+    t.bigint "voltage_level_id"
+    t.integer "status"
+    t.text "description"
+    t.integer "improductive"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "improductive_reason_id"
+    t.index ["activity_id"], name: "index_hours_records_on_activity_id"
+    t.index ["bay_id"], name: "index_hours_records_on_bay_id"
+    t.index ["improductive_reason_id"], name: "index_hours_records_on_improductive_reason_id"
+    t.index ["project_id"], name: "index_hours_records_on_project_id"
+    t.index ["user_id"], name: "index_hours_records_on_user_id"
+    t.index ["voltage_level_id"], name: "index_hours_records_on_voltage_level_id"
+  end
+
+  create_table "improductive_reasons", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "wbs"
+    t.string "name"
+    t.text "description"
+    t.integer "ct_id"
+    t.integer "pm_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ct_id"], name: "index_projects_on_ct_id"
+    t.index ["pm_id"], name: "index_projects_on_pm_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,4 +86,12 @@ ActiveRecord::Schema.define(version: 2019_07_09_174056) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "hours_records", "activities"
+  add_foreign_key "hours_records", "bays"
+  add_foreign_key "hours_records", "improductive_reasons"
+  add_foreign_key "hours_records", "projects"
+  add_foreign_key "hours_records", "users"
+  add_foreign_key "hours_records", "voltage_levels"
+  add_foreign_key "projects", "users", column: "ct_id"
+  add_foreign_key "projects", "users", column: "pm_id"
 end
