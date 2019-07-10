@@ -1,0 +1,52 @@
+<%= form_with(model: hours_record, local: true) do |form| %>
+  <% if hours_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hours_record.errors.count, "error") %> prohibited this hours_record from being saved:</h2>
+
+      <ul>
+      <% hours_record.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :day %>
+    <%= form.date_select :day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :man_hour %>
+    <%= form.text_field :man_hour %>
+  </div>
+
+  <div class="field">
+    <%= form.label :activity_id %>
+    <%= form.text_field :activity_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :project_id %>
+    <%= form.text_field :project_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bay_id %>
+    <%= form.text_field :bay_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :voltage_level_id %>
+    <%= form.text_field :voltage_level_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :improductive_reasons
+  resources :hours_records
   resources :bays
   resources :voltage_levels
   resources :activities

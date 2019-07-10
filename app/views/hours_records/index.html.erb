@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hours Records</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Man hour</th>
+      <th>Activity</th>
+      <th>Project</th>
+      <th>User</th>
+      <th>Bay</th>
+      <th>Voltage level</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hours_records.each do |hours_record| %>
+      <tr>
+        <td><%= hours_record.day %></td>
+        <td><%= hours_record.man_hour %></td>
+        <td><%= hours_record.activity %></td>
+        <td><%= hours_record.project %></td>
+        <td><%= hours_record.user %></td>
+        <td><%= hours_record.bay %></td>
+        <td><%= hours_record.voltage_level %></td>
+        <td><%= link_to 'Show', hours_record %></td>
+        <td><%= link_to 'Edit', edit_hours_record_path(hours_record) %></td>
+        <td><%= link_to 'Destroy', hours_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hours Record', new_hours_record_path %>

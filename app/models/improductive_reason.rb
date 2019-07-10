@@ -1,0 +1,2 @@
+class ImproductiveReason < ApplicationRecord
+end
