@@ -48,15 +48,44 @@ puts "Fake Bays created succesfully..."
 puts "Create Fake Improductive Reason..."
 
   4.times do
-    InproductiveReason.create!(
+    ImproductiveReason.create!(
       name: FFaker::Vehicle.model
     )
   end
   
 puts "Fake Improductive Reason created succesfully..."
 
-# 5 - Create Project
-# 6 - Cretae Voltage Level
+# 5 - Cretae Voltage Level
+
+puts "Create Fake Voltage Levels..."
+
+  4.times do
+    VoltageLevel.create!(
+      name: FFaker::Food.fruit
+    )
+  end
+  
+puts "Fake Voltage Levels created succesfully..."
+
+# 6 - Create Project
+
+puts "Create Fake Projects..."
+
+  50.times do
+    @ct = User.all.sample
+    @pm = User.all.sample
+
+    Project.create!(
+      wbs: [*('a'..'z'),*('0'..'9')].shuffle[0,8].join,
+      name: FFaker::Food.vegetable,
+      description: FFaker::Lorem.paragraph,
+      ct_id: @ct.id,
+      pm_id: @pm.id
+    )
+  end
+  
+puts "Fake Projects created succesfully..."
+
 # 7 - Create Profile
 # 8 - Hours Records
 
