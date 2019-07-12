@@ -1,2 +1,4 @@
-class Activity < ApplicationRecord
+class Activity < Category
+    
+
 end

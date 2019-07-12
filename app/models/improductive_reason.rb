@@ -1,2 +1,2 @@
-class ImproductiveReason < ApplicationRecord
+class ImproductiveReason < Category
 end

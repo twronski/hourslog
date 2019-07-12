@@ -4,4 +4,5 @@ class HoursRecord < ApplicationRecord
   belongs_to :user
   belongs_to :bay
   belongs_to :voltage_level
+  belongs_to :improductive_reason
 end

@@ -1,2 +1,2 @@
-class VoltageLevel < ApplicationRecord
+class VoltageLevel < Category
 end

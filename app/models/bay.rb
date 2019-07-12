@@ -1,2 +1,2 @@
-class Bay < ApplicationRecord
+class Bay < Category
 end
