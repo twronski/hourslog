@@ -21,11 +21,11 @@
       <tr>
         <td><%= hours_record.day %></td>
         <td><%= hours_record.man_hour %></td>
-        <td><%= hours_record.activity %></td>
-        <td><%= hours_record.project %></td>
-        <td><%= hours_record.user %></td>
-        <td><%= hours_record.bay %></td>
-        <td><%= hours_record.voltage_level %></td>
+        <td><%= hours_record.activity.name %></td>
+        <td><%= hours_record.project.wbs %></td>
+        <td><%= hours_record.user.profile.full_name %></td>
+        <td><%= hours_record.bay.name %></td>
+        <td><%= hours_record.voltage_level.name %></td>
         <td><%= link_to 'Show', hours_record %></td>
         <td><%= link_to 'Edit', edit_hours_record_path(hours_record) %></td>
         <td><%= link_to 'Destroy', hours_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
