@@ -5,17 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# 1 - Create Users
+
+# 1 - Create Users / Profiles
 require 'ffaker'
 
 puts "Create Fake Users..."
 
   100.times do
-    User.create!(
+    @user = User.create!(
       email: FFaker::Internet.email,
       password: "123456",
       password_confirmation: "123456"
     )
+
+    @user.create_profile(
+        full_name: "#{FFaker::Name.first_name} #{FFaker::Name.last_name}"
+    )
+    
+
   end
 puts "Fake users created succesfully..."
 
@@ -69,7 +76,7 @@ puts "Fake Voltage Levels created succesfully..."
 
 # 6 - Create Project
 
-puts "Create Fake Projects..."
+puts "Create Projects..."
 
   50.times do
     @ct = User.all.sample
@@ -84,8 +91,38 @@ puts "Create Fake Projects..."
     )
   end
   
-puts "Fake Projects created succesfully..."
+puts "Projects created succesfully..."
 
-# 7 - Create Profile
-# 8 - Hours Records
+# 7 - Hours Records
+
+puts "Create Hour Records"
+
+  1500.times do
+    @activity = Activity.all.sample
+    @project = Project.all.sample
+    @user = User.all.sample
+    @bay = Bay.all.sample
+    @voltage_level = VoltageLevel.all.sample
+    @improductive_reason = ImproductiveReason.all.sample
+
+    HoursRecord.create!(
+      day: Date.today - rand(30),
+      man_hour: rand * 9,
+      activity_id: @activity.id,
+      project_id: @project.id,
+      user_id: @user.id,
+      bay_id: @bay.id,
+      voltage_level_id: @voltage_level.id,
+      status: 0,
+      description: FFaker::HipsterIpsum.paragraph,
+      improductive: 1,
+      improductive_reason_id: @improductive_reason.id
+      
+    )
+  end
+  
+puts "Hour Records created succesfully..."
+
+
+
 
