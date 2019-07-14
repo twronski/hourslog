@@ -4,7 +4,7 @@ class Project < ApplicationRecord
 
     has_many :hours_records, dependent: :destroy
     validates :name, :wbs, presence: true
-    validates :wbs, uniqueness: true    
+    validates :name, :wbs, uniqueness: true    
 
      
 end

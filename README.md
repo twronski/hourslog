@@ -39,3 +39,4 @@ May also include reports and statustics related to these logged hours
 
 ### Generate Application Models
 
++ Use @xxx.destroy to delete all the dependent: destroy associamtions.
