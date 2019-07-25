@@ -6,4 +6,5 @@ class HoursRecord < ApplicationRecord
   belongs_to :bay
   belongs_to :voltage_level
   belongs_to :improductive_reason
+  has_many :comments, as: :commentable
 end
