@@ -50,3 +50,6 @@ Reminder:
  - team_leader
  - ge_team_leader
  - admin
+
+ ### Visualize git topology in the terminal
+ `git log --graph --decorate --oneline`
