@@ -1,11 +1,9 @@
-<div class="container-fluid">
+<div class="container">
 	<div class="row">
-		<div class="col-md-12">
+        <div class="col-sm-6 offset-sm-3 text-center">
             <h3 class="text-primary"> New Activity</h3>
 
-            <%= render 'form', activity: @activity %>
-            
-
+            <%= render 'form', activity: @activity, class: "form-inlin justify-content-center" %>
             <%= link_to 'Back', activities_path, class: "btn btn-link" %>
 
         </div>
