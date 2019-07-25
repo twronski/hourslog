@@ -1,5 +1,13 @@
-<h1>New Activity</h1>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+            <h3 class="text-primary"> New Activity</h3>
 
-<%= render 'form', activity: @activity %>
+            <%= render 'form', activity: @activity %>
+            
 
-<%= link_to 'Back', activities_path %>
+            <%= link_to 'Back', activities_path, class: "btn btn-link" %>
+
+        </div>
+    </div>
+</div>
