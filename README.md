@@ -29,8 +29,8 @@ May be improved with validation process
 May also include reports and statustics related to these logged hours
 
 ### Setup Database
-+ Setup database.yml (user: postgres and host: postgres)
-+ create and migrate postgres database:
+* Setup database.yml (user: postgres and host: postgres)
+* create and migrate postgres database:
   + `docker-compose run --rm app bundle exec rails db:create db:migrate`
 
 ### Setup Devise and Mailcatcher
@@ -39,4 +39,14 @@ May also include reports and statustics related to these logged hours
 
 ### Generate Application Models
 
-+ Use @xxx.destroy to delete all the dependent: destroy associamtions.
+Reminder:
+
+* Use @xxx.destroy to delete all the dependent: destroy associamtions.
+
+### Roles:
+ - engineer
+ - ct
+ - pm
+ - team_leader
+ - ge_team_leader
+ - admin
