@@ -23,12 +23,12 @@
 
   <div class="field">
     <%= form.label :activity_id %>
-    <%= form.text_field :activity_id %>
+    <%= form.collection_select(:activity_id, Activity.all, :id, :name) %>
   </div>
 
   <div class="field">
     <%= form.label :project_id %>
-    <%= form.text_field :project_id %>
+    <%= form.collection_select(:project_id, Project.all, :id, :name) %>
   </div>
 
   <div class="field">
@@ -38,12 +38,12 @@
 
   <div class="field">
     <%= form.label :bay_id %>
-    <%= form.text_field :bay_id %>
+    <%= form.collection_select(:bay_id, Bay.all, :id, :name) %>
   </div>
 
   <div class="field">
     <%= form.label :voltage_level_id %>
-    <%= form.text_field :voltage_level_id %>
+    <%= form.collection_select(:voltage_level_id, VoltageLevel.all, :id, :name) %>
   </div>
 
   <div class="actions">
