@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_25_190944) do
+ActiveRecord::Schema.define(version: 2019_07_29_203604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 2019_07_25_190944) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "improductive_reason_id"
+    t.integer "number_of_revisions"
+    t.date "action_deadline"
     t.index ["activity_id"], name: "index_hours_records_on_activity_id"
     t.index ["bay_id"], name: "index_hours_records_on_bay_id"
     t.index ["improductive_reason_id"], name: "index_hours_records_on_improductive_reason_id"

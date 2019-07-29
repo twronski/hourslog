@@ -61,4 +61,9 @@ Reminder:
  [Git Commands](https://github.com/joshnh/Git-Commands)
 
  ### Clone a remote branch and switch to it
- `git checkout -b [branch name] origin/[branch name]`
+ `git checkout -b [branch name] origin/[branch name]
+ 
+ ### Alias zsh
+ `alias docker-rails="docker-compose run --rm app bundle exec rails"`
+ `alias docker-db-reset="docker-compose run --rm app bundle exec rails db:drop db:create db:migrate db:seed"`
+ `alias docker-bundle="docker-compose run --rm app bundle install"`
