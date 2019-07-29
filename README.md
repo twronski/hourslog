@@ -53,3 +53,12 @@ Reminder:
 
  ### Visualize git topology in the terminal
  `git log --graph --decorate --oneline`
+
+ ### Update remote branchs in local list
+ `git fetch`
+
+ ### Summary of git commands
+ [Git Commands](https://github.com/joshnh/Git-Commands)
+
+ ### Clone a remote branch and switch to it
+ `git checkout -b [branch name] origin/[branch name]`
