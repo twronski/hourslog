@@ -12,27 +12,40 @@
 
 <p>
   <strong>Activity:</strong>
-  <%= @hours_record.activity %>
+  <%= @hours_record.activity.name %>
 </p>
 
 <p>
   <strong>Project:</strong>
-  <%= @hours_record.project %>
+  <%= @hours_record.project.name %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @hours_record.user %>
+  <%= @hours_record.user.profile.full_name %>
 </p>
 
 <p>
   <strong>Bay:</strong>
-  <%= @hours_record.bay %>
+  <%= @hours_record.bay.name %>
 </p>
 
 <p>
   <strong>Voltage level:</strong>
-  <%= @hours_record.voltage_level %>
+  <%= @hours_record.voltage_level.name %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @hours_record.status %>
+</p>
+
+<p>
+  <%= button_to "Devolver para Revisão", action: "set_workflow", act: "send_back", id: @hours_record.id  %>
+</p>
+
+<p>
+  <%= button_to "Aprovar Horas", action: "set_workflow", act: "approve" , id: @hours_record.id %>
 </p>
 
 <%= link_to 'Edit', edit_hours_record_path(@hours_record) %> |

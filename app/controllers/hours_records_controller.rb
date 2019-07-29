@@ -1,5 +1,5 @@
 class HoursRecordsController < ApplicationController
-  before_action :set_hours_record, only: [:show, :edit, :update, :destroy]
+  before_action :set_hours_record, only: [:show, :edit, :update, :destroy, :set_workflow]
 
   # GET /hours_records
   # GET /hours_records.json
@@ -61,6 +61,24 @@ class HoursRecordsController < ApplicationController
     end
   end
 
+  def set_workflow
+    
+    
+    
+    if params[:act] == "approve"
+      @hours_record.update(status: "rep_approved")
+    elsif params[:act] == "send_back"
+      @hours_record.update(status: "rep_under_revision")
+    end
+
+    # @hours_record = HoursRecord.first
+    # @hours_record.update(status: "rep_under_revision")
+    
+    redirect_to @hours_record
+
+  end
+  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_hours_record
@@ -71,4 +89,5 @@ class HoursRecordsController < ApplicationController
     def hours_record_params
       params.require(:hours_record).permit(:day, :man_hour, :activity_id, :project_id, :user_id, :bay_id, :voltage_level_id)
     end
+    
 end

@@ -7,4 +7,13 @@ class HoursRecord < ApplicationRecord
   belongs_to :voltage_level
   belongs_to :improductive_reason
   has_many :comments, as: :commentable
+
+  after_create :set_report_status
+
+  private
+
+    def set_report_status
+      self.status = "rep_new"
+    end
+    
 end
