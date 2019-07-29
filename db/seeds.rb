@@ -78,13 +78,13 @@ puts "Fake Voltage Levels created succesfully..."
 
 puts "Create Projects..."
 
-  50.times do
+  20.times do
     @ct = User.all.sample
     @pm = User.all.sample
 
     Project.create!(
       wbs: [*('a'..'z'),*('0'..'9')].shuffle[0,8].join,
-      name: FFaker::Food.vegetable,
+      name: [*('a'..'z'),*('0'..'9')].shuffle[0,10].join,
       description: FFaker::Lorem.paragraph,
       ct_id: @ct.id,
       pm_id: @pm.id
