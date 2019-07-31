@@ -63,8 +63,6 @@ class HoursRecordsController < ApplicationController
 
   def set_workflow
     
-    
-    
     if params[:act] == "approve"
       @hours_record.update(status: "rep_approved")
     elsif params[:act] == "send_back"

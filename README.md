@@ -67,3 +67,6 @@ Reminder:
  `alias docker-rails="docker-compose run --rm app bundle exec rails"`
  `alias docker-db-reset="docker-compose run --rm app bundle exec rails db:drop db:create db:migrate db:seed"`
  `alias docker-bundle="docker-compose run --rm app bundle install"`
+
+### Date Time in Ruby
+[Date Time](https://www.tutorialspoint.com/ruby/ruby_date_time)
