@@ -100,3 +100,32 @@ Reminder:
 -[] Create Navigation
 -[] Bootsrap styling
 -[] Deployment
+
+* **Notebooks**
+  * [x] List
+  * [ ] Create
+  * [ ] Update
+  * [ ] Delete
+* **Tags**
+  * [x] List
+  * [ ] Create
+  * [ ] Update
+  * [ ] Delete
+* **Notes**
+  * [x] List
+  * [x] Create
+  * [x] Update
+  * [x] Delete
+* **Sync**
+  * [x] Set dirty flags
+  * [ ] Start sync process
+  * [x] Display animation
+  * Push to server:
+    * [ ] Create
+    * [ ] Update
+    * [ ] Delete
+  * Pull to local:
+    * [ ] Create
+    * [ ] Update
+    * [ ] Delete
+  * [ ] Merge differences
