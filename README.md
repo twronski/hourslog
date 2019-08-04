@@ -59,8 +59,6 @@ Reminder:
  ### Update remote branchs in local list
  `git fetch`
 
- ### Summary of git commands
- [Git Commands](https://github.com/joshnh/Git-Commands)
 
  ### Clone a remote branch and switch to it
  `git checkout -b [branch name] origin/[branch name]
@@ -70,11 +68,18 @@ Reminder:
  `alias docker-db-reset="docker-compose run --rm app bundle exec rails db:drop db:create db:migrate db:seed"`
  `alias docker-bundle="docker-compose run --rm app bundle install"`
 
+## Useful Tips (new learning)
+
 ### Date Time in Ruby
 [Date Time](https://www.tutorialspoint.com/ruby/ruby_date_time)
+### Visual Studio Debug Rails
+[onebitcode - vs code](https://onebitcode.com/vs-code-rails/)
+[degug rails - vs code oficial microsoft](https://github.com/microsoft/vscode-recipes/tree/master/debugging-Ruby-on-Rails)
+ ### Summary of git commands
+[Git Commands](https://github.com/joshnh/Git-Commands)
 
 ## Todo
- -[] Add next_action_deadline and review_count fields on hours_record model
+ -[x] Add next_action_deadline and review_count fields on hours_record model
  -[] implement creation and update hooks for hours_record model 
  -[] Create application config itens
   -[] Time_for CT review
