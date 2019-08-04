@@ -50,6 +50,8 @@ Reminder:
  - team_leader
  - ge_team_leader
  - admin
+ - pmo
+
 
  ### Visualize git topology in the terminal
  `git log --graph --decorate --oneline`
@@ -70,3 +72,26 @@ Reminder:
 
 ### Date Time in Ruby
 [Date Time](https://www.tutorialspoint.com/ruby/ruby_date_time)
+
+## Todo
+ -[] Add next_action_deadline and review_count fields on hours_record model
+ -[] implement creation and update hooks for hours_record model 
+ -[] Create application config itens
+  -[] Time_for CT review
+  -[] Time for 2nd review on
+  -[] Max_number_of_reviews
+  -[] Max Days for providing report
+  -[] Max weekly working hours
+  -[] Max daily working hours
+  -[] Max daily working extra hours
+ -[] Create Validators
+ -[] Seed with real data
+ -[] Test some validations
+ -[] Implement roles access using can can
+ -[] Implement Extra Hours Creation
+    -[] Models
+    -[] Views
+    -[] Link with record creation
+-[] Create Navigation
+-[] Bootsrap styling
+-[] Deployment
