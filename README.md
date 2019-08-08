@@ -98,6 +98,7 @@ Reminder:
     -[] Views
     -[] Link with record creation
 -[] Create Navigation
+-[] Will paginate
 -[] Bootsrap styling
 -[] Deployment
 
