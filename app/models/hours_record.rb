@@ -14,28 +14,37 @@ class HoursRecord < ApplicationRecord
     self.action_deadline = Date.today + 7
   end
 
-  def update_wf_status(next_step)
-    case next_step
-    when "rep_under_revision"
+  def set_under_analisys
+    self.status = "rep_under_analysis"
+    self.action_deadline = Date.today + 3
+  end
+
+  def set_under_revision
       self.status = "rep_under_revision"
       self.number_of_revisions += 1
       self.action_deadline = Date.today + 3    
-    
-    when "rep_approved"
-      self.status = "rep_approved"
-    
-    when "rep_rejected"
-      self.status = "rep_rejected"
-    
-    when "rep_aut_approved"
-      self.status = "rep_approved"
-    
-    when "rep_aut_rejected"
-      self.status = "rep_rejected"
-    end
+      self.save
+  end
 
+  def set_approved
+    self.status = "rep_approved"
     self.save
   end
+
+  def set_rejected
+    self.status = "rep_rejected"
+    self.save
+  end
+
+  def perform_aut_action
+    if self.status == "rep_under_analysis"
+      self.status = "rep_aut_approved"
+    else
+      self.status = "rep_aut_rejected"
+    end
+    self.save
+  end
+  
 
   def check_creation_criteria
     
