@@ -41,6 +41,8 @@ class HoursRecordsController < ApplicationController
   # PATCH/PUT /hours_records/1.json
   def update
     respond_to do |format|
+       @hours_record.status = "rep_under_analysis"
+       @hours_record.action_deadline = Date.today + 3
       if @hours_record.update(hours_record_params)
         format.html { redirect_to @hours_record, notice: 'Hours record was successfully updated.' }
         format.json { render :show, status: :ok, location: @hours_record }
@@ -64,9 +66,9 @@ class HoursRecordsController < ApplicationController
   def set_workflow
     
     if params[:act] == "approve"
-      @hours_record.update(status: "rep_approved")
+      @hours_record.update_wf_status("rep_approved")
     elsif params[:act] == "send_back"
-      @hours_record.update(status: "rep_under_revision")
+      @hours_record.update_wf_status("rep_under_revision")
     end
 
     # @hours_record = HoursRecord.first
