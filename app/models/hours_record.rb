@@ -5,7 +5,7 @@ class HoursRecord < ApplicationRecord
   belongs_to :user
   belongs_to :bay
   belongs_to :voltage_level
-  belongs_to :improductive_reason
+  belongs_to :improductive_reason, optional: true
   has_many :comments, as: :commentable
 
   after_create :set_report_status
@@ -13,7 +13,8 @@ class HoursRecord < ApplicationRecord
   private
 
     def set_report_status
-      self.status = "rep_new"
+      self.status = 3
+      self.save
     end
 
     def check_creation_criteria

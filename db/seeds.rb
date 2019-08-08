@@ -31,7 +31,7 @@ puts "Fake users created succesfully..."
 puts "Create Fake Activities..."
 
   5.times do
-    Activity.create!(
+    Activity.find_or_create_by!(
       name: FFaker::SportUS.name
     )
   end
@@ -43,7 +43,7 @@ puts "Fake Activities created succesfully..."
 puts "Create Fake Bays..."
 
   7.times do
-    Bay.create!(
+    Bay.find_or_create_by!(
       name: FFaker::Product.product_name
     )
   end
@@ -55,7 +55,7 @@ puts "Fake Bays created succesfully..."
 puts "Create Fake Improductive Reason..."
 
   4.times do
-    ImproductiveReason.create!(
+    ImproductiveReason.find_or_create_by!(
       name: FFaker::Vehicle.model
     )
   end
@@ -67,7 +67,7 @@ puts "Fake Improductive Reason created succesfully..."
 puts "Create Fake Voltage Levels..."
 
   4.times do
-    VoltageLevel.create!(
+    VoltageLevel.find_or_create_by!(
       name: FFaker::Food.fruit
     )
   end
