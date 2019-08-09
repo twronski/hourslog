@@ -1,0 +1,7 @@
+max_number_reviews: 2
+time_for_first_review: 7
+time_for_review: 5
+max_dayly_working_hours: 8.7
+max_report_date_delay: 14
+max_week_working_days: 6
+max_daily_extra_hours: 2
