@@ -7,6 +7,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 CONFIG = YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
+CONFIG.symbolize_keys!
 
 module HoursLog
   class Application < Rails::Application
