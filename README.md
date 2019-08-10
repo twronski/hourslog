@@ -81,14 +81,14 @@ Reminder:
 ## Todo
  -[x] Add next_action_deadline and review_count fields on hours_record model \
  -[x] implement creation and update hooks for hours_record model \
- -[] Create application config itens \
-  -[] Time_for CT review \
-  -[] Time for 2nd review on \
-  -[] Max_number_of_reviews
-  -[] Max Days for providing report
-  -[] Max weekly working hours
-  -[] Max daily working hours
-  -[] Max daily working extra hours
+ -[x] Create application config itens \
+  -[x] Time_for CT review \
+  -[x] Time for 2nd review on \
+  -[x] Max_number_of_reviews
+  -[x] Max Days for providing report
+  -[x] Max weekly working hours
+  -[x] Max daily working hours
+  -[x] Max daily working extra hours
  -[] Create Validators
  -[] Seed with real data
  -[] Test some validations
