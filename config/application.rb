@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+CONFIG = YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
+
 module HoursLog
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
