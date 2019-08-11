@@ -90,6 +90,8 @@ Reminder:
     *  [x] Max daily working hours
     *  [x] Max daily working extra hours
   *  [] Create Validators
+    * [x] Date Validator
+    * [] Hours Validator 
   *  [] Seed with real data
   *  [] Test some validations
   *  [] Implement roles access using can can
