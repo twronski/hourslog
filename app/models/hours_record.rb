@@ -8,6 +8,10 @@ class HoursRecord < ApplicationRecord
   belongs_to :improductive_reason, optional: true
   has_many :comments, as: :commentable
 
+  validates_presence_of :man_hour, message: "Não poe ser vazio"
+  validates :day, presence: true, creation_date: true
+  
+
   before_create do
     self.status = "rep_under_analysis"
     self.number_of_revisions = 0
@@ -17,13 +21,14 @@ class HoursRecord < ApplicationRecord
   def set_under_analisys
     self.status = "rep_under_analysis"
     self.action_deadline = Date.today + 3
+    self.save
   end
 
   def set_under_revision
-      self.status = "rep_under_revision"
-      self.number_of_revisions += 1
-      self.action_deadline = Date.today + 3    
-      self.save
+    self.status = "rep_under_revision"
+    self.number_of_revisions += 1
+    self.action_deadline = Date.today + 3    
+    self.save
   end
 
   def set_approved
