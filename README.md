@@ -78,55 +78,27 @@ Reminder:
  ### Summary of git commands
 [Git Commands](https://github.com/joshnh/Git-Commands)
 
-## Todo
- -[x] Add next_action_deadline and review_count fields on hours_record model \
- -[x] implement creation and update hooks for hours_record model \
- -[x] Create application config itens \
-  -[x] Time_for CT review \
-  -[x] Time for 2nd review on \
-  -[x] Max_number_of_reviews
-  -[x] Max Days for providing report
-  -[x] Max weekly working hours
-  -[x] Max daily working hours
-  -[x] Max daily working extra hours
- -[] Create Validators
- -[] Seed with real data
- -[] Test some validations
- -[] Implement roles access using can can
- -[] Implement Extra Hours Creation
-    -[] Models
-    -[] Views
-    -[] Link with record creation
--[] Create Navigation
--[] Will paginate
--[] Bootsrap styling - Buy Theme
--[] Deployment
-
-* **Notebooks**
-  * [x] List
-  * [ ] Create
-  * [ ] Update
-  * [ ] Delete
-* **Tags**
-  * [x] List
-  * [ ] Create
-  * [ ] Update
-  * [ ] Delete
-* **Notes**
-  * [x] List
-  * [x] Create
-  * [x] Update
-  * [x] Delete
-* **Sync**
-  * [x] Set dirty flags
-  * [ ] Start sync process
-  * [x] Display animation
-  * Push to server:
-    * [ ] Create
-    * [ ] Update
-    * [ ] Delete
-  * Pull to local:
-    * [ ] Create
-    * [ ] Update
-    * [ ] Delete
-  * [ ] Merge differences
+* **Todo**
+  *  [x] Add next_action_deadline and review_count fields on hours_record model \
+  *  [x] implement creation and update hooks for hours_record model \
+  *  [x] Create application config itens \
+    *  [x] Time_for CT review \
+    *  [x] Time for 2nd review on \
+    *  [x] Max_number_of_reviews
+    *  [x] Max Days for providing report
+    *  [x] Max weekly working hours
+    *  [x] Max daily working hours
+    *  [x] Max daily working extra hours
+  *  [] Create Validators
+  *  [] Seed with real data
+  *  [] Test some validations
+  *  [] Implement roles access using can can
+  *  [] Create Navigation
+  *  [] Will paginate
+  *  [] Bootsrap styling *   Buy Theme
+  *  [] Deployment
+  *  [] Implement Extra Hours Creation
+    * [] Models
+    * [] Views
+    * [] Link with record creation
+  * [] Deployment
