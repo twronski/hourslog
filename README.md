@@ -78,6 +78,12 @@ Reminder:
  ### Summary of git commands
 [Git Commands](https://github.com/joshnh/Git-Commands)
 
+### Query last week working hours
+ * HoursRecord.where(user_id: 6, day: (Time.now.midnight - 7.day)..Time.now.midnight).sum("man_hour")
+### Query given day working hours
+* HoursRecord.where(user_id: 6, day: "2019-08-07").sum("man_hour")
+* HoursRecord.where(status: ["rep_approved","rep_under_analysis"]).count
+
 * **Todo**
   *  [x] Add next_action_deadline and review_count fields on hours_record model \
   *  [x] implement creation and update hooks for hours_record model \
@@ -97,6 +103,7 @@ Reminder:
   *  [] Implement roles access using can can
   *  [] Create Navigation
   *  [] Will paginate
+  *  [] friendly_id
   *  [] Bootsrap styling *   Buy Theme
   *  [] Deployment
   *  [] Implement Extra Hours Creation
