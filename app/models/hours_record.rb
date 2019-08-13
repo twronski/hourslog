@@ -10,6 +10,7 @@ class HoursRecord < ApplicationRecord
 
   validates_presence_of :man_hour, message: "Não poe ser vazio"
   validates :day, presence: true, creation_date: true
+  validates_with WorkWeekValidator
   
 
   before_create do
