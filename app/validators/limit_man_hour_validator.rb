@@ -9,7 +9,7 @@ class LimitManHourValidator < ActiveModel::EachValidator
         week_available_hours = CONFIG[:max_week_working_hours] - HoursRecord.where(user_id: record.user_id, day: (record.day - CONFIG[:max_week_working_days].day)..record.day).where.not(status: ["ep_aut_rejected", "rep_rejected"]).sum("man_hour")
         available_hours = [day_available_hours,week_available_hours].min
 
-        if record.man_hour < available_hours
+        if value < available_hours
             true
         else
             if day_available_hours < week_available_hours
