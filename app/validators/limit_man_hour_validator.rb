@@ -1,5 +1,5 @@
 
-class ManHourValidator < ActiveModel::EachValidator
+class LimitManHourValidator < ActiveModel::EachValidator
     def validate_each(record, attribute, value)
         true
         # HoursRecord.where(user_id: 6, day: (Time.now.midnight - 6.day)..Time.now.midnight).sum("man_hour") -> Ultima semana
