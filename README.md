@@ -70,7 +70,7 @@ Reminder:
 ### Alias zsh
 
  `alias docker-rails="docker-compose run --rm app bundle exec rails"`
- `alias docker-db-reset="docker-compose run --rm app bundle exec rails db:drop db:create db:migrate db:seed"`
+`alias docker-db-reset="docker-compose run --rm app bundle exec rails db:drop db:create db:migrate db:seed"`
  `alias docker-bundle="docker-compose run --rm app bundle install"`
 
 ## Useful Tips (new learning)
@@ -110,7 +110,8 @@ Reminder:
     * [x] Max daily working extra hours
   * [] Create Validators
     * [x] Date Validator
-    * [] Hours Validator
+    * [x] Hours Validator
+    * [] Work Week Validator (need fix +- 6 days)
   * [] Seed with real data
   * [] Test some validations
   * [] Implement roles access using can can

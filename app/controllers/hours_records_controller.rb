@@ -67,7 +67,7 @@ class HoursRecordsController < ApplicationController
     if params[:act] == "approve"
       @hours_record.set_approved
     elsif params[:act] == "send_back"
-      @hours_record.set_rejected
+      @hours_record.set_under_revision
     end
 
     # @hours_record = HoursRecord.first

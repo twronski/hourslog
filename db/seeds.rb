@@ -11,7 +11,7 @@ require 'ffaker'
 
 puts "Create Fake Users..."
 
-  100.times do
+  25.times do
     @user = User.create!(
       email: FFaker::Internet.email,
       password: "123456",
@@ -97,7 +97,7 @@ puts "Projects created succesfully..."
 
 puts "Create Hour Records"
 
-  1500.times do
+  50.times do
     @activity = Activity.all.sample
     @project = Project.all.sample
     @user = User.all.sample
@@ -106,8 +106,8 @@ puts "Create Hour Records"
     @improductive_reason = ImproductiveReason.all.sample
 
     HoursRecord.create!(
-      day: Date.today - rand(30),
-      man_hour: rand * 9,
+      day: Date.today - rand(10),
+      man_hour: rand * 3,
       activity_id: @activity.id,
       project_id: @project.id,
       user_id: @user.id,
@@ -119,6 +119,7 @@ puts "Create Hour Records"
       improductive_reason_id: @improductive_reason.id
       
     )
+    puts "hour record created"
   end
   
 puts "Hour Records created succesfully..."

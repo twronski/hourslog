@@ -1,5 +1,7 @@
 class HoursRecord < ApplicationRecord
-  enum status: %i(rep_new rep_under_analysis rep_under_revision rep_aut_approved rep_approved rep_aut_rejected rep_rejected)
+  include ActiveModel::Validations
+  
+  enum status: %i(rep_under_analysis rep_under_revision rep_aut_approved rep_approved rep_aut_rejected rep_rejected)
   belongs_to :activity
   belongs_to :project
   belongs_to :user
