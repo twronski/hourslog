@@ -111,13 +111,15 @@ Reminder:
   * [] Create Validators
     * [x] Date Validator
     * [x] Hours Validator
-    * [] Work Week Validator (need fix +- 6 days)
+    * [x] Work Week Validator (need fix +- 6 days)
   * [] Seed with real data
   * [] Test some validations
   * [] Implement roles access using can can
   * [] Create Navigation
   * [] Will paginate
   * [] friendly_id
+  * [] background_jobs
+  * [] Helpers in html
   * [] Bootsrap styling *   Buy Theme
   * [] Deployment
   * [] Implement Extra Hours Creation

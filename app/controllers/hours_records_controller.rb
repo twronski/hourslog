@@ -1,5 +1,5 @@
 class HoursRecordsController < ApplicationController
-  before_action :set_hours_record, only: [:show, :edit, :update, :destroy, :set_workflow]
+  before_action :set_hours_record, only: [:show, :edit, :update, :destroy]
 
   # GET /hours_records
   # GET /hours_records.json
@@ -63,10 +63,14 @@ class HoursRecordsController < ApplicationController
   end
 
   def set_workflow
+
+    @hours_record = HoursRecord.find(params[:hours_record][:id])
     
-    if params[:act] == "approve"
+    if params[:commit] ==  'Reprovar Horas'
+      @hours_record.set_rejected
+    elsif params[:commit] == 'Aprovar Horas'
       @hours_record.set_approved
-    elsif params[:act] == "send_back"
+    elsif params[:commit] == 'Devolver para Revisão'
       @hours_record.set_under_revision
     end
 

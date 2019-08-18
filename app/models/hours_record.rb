@@ -40,7 +40,7 @@ class HoursRecord < ApplicationRecord
     self.save
   end
 
-  def set_rejected
+def set_rejected
     self.status = "rep_rejected"
     self.save
   end
@@ -53,32 +53,5 @@ class HoursRecord < ApplicationRecord
     end
     self.save
   end
-  
-
-  def check_creation_criteria
-    
-    if self.day + 14 > DateTime.now
-      'ok'
-    else
-      'nok'
-    end
-          
-    if self.man_hour < 11.0
-      'ok'
-    else
-      'nok'
-    end
-
-  end
-
-  def available_hours
-    user_day_records = HoursRecord.where("day = ? AND self.user = ?", self.day, current_user.id)
-    # day approved
-    # week approved
-    # day limit (can be extended with extra hours approved by PM)
-    # week limit (can be extended with extra hours approved by PM)
-    # available min(week_limit - week_approved, day_limit - day_approved)
-  end
-    
     
 end
