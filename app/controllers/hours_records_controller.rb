@@ -4,7 +4,7 @@ class HoursRecordsController < ApplicationController
   # GET /hours_records
   # GET /hours_records.json
   def index
-    @hours_records = HoursRecord.all
+    @hours_records = HoursRecord.order(:user_id, :day)
   end
 
   # GET /hours_records/1
