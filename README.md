@@ -112,7 +112,8 @@ Reminder:
     * [x] Date Validator
     * [x] Hours Validator
     * [x] Work Week Validator (need fix +- 6 days)
-  * [] Download and install theme
+  * [x] Download theme
+  * [] Install theme
   * [] Test HTML helpers
   * [] Seed with more real data
   * [x] Test some validations
