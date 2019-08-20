@@ -112,18 +112,21 @@ Reminder:
     * [x] Date Validator
     * [x] Hours Validator
     * [x] Work Week Validator (need fix +- 6 days)
-  * [] Seed with real data
-  * [] Test some validations
+  * [] Download and install theme
+  * [] Test HTML helpers
+  * [] Seed with more real data
+  * [x] Test some validations
+  * [] Implement Extra Hours Creation
+    * [] Models
+    * [] Views
+    * [] Link with record creation
   * [] Implement roles access using can can
   * [] Create Navigation
   * [] Will paginate
   * [] friendly_id
   * [] background_jobs
+  * [] mailer
+  * [] invitable devise
   * [] Helpers in html
   * [] Bootsrap styling *   Buy Theme
-  * [] Deployment
-  * [] Implement Extra Hours Creation
-    * [] Models
-    * [] Views
-    * [] Link with record creation
   * [] Deployment

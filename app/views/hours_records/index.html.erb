@@ -19,6 +19,7 @@
 
   <tbody>
     <% @hours_records.each do |hours_record| %>
+    <% statuses = hour_status(hours_record.status)%>
       <tr>
         <td><%= hours_record.day %></td>
         <td><%= hours_record.man_hour %></td>
@@ -27,7 +28,7 @@
         <td><%= hours_record.user.profile.full_name %></td>
         <td><%= hours_record.bay.name %></td>
         <td><%= hours_record.voltage_level.name %></td>
-        <td><span class="badge badge-primary"><%= hours_record.status %></span></td>
+        <td><span class="<%= statuses["badge"] %>"><%= statuses["message"] %></span></td>
         <td><%= link_to 'Show', hours_record %></td>
         <td><%= link_to 'Edit', edit_hours_record_path(hours_record) %></td>
         <td><%= link_to 'Destroy', hours_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
