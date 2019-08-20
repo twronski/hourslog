@@ -29,6 +29,10 @@ Simple application to log work hours related to a project and type of activity
 May be improved with validation process  
 May also include reports and statustics related to these logged hours
 
+### Generate Project with Docker - Linux
+
+`sudo docker run -it --rm --user "$(id -u):$(id -g)" -v "$PWD":/usr/src/app -w /usr/src/app ruby /bin/bash -c "gem install rails ; rails new testWindows --skip-bundle --database=postgresql"`
+
 ### Setup Database
 
 * Setup database.yml (user: postgres and host: postgres)
@@ -114,7 +118,7 @@ Reminder:
     * [x] Work Week Validator (need fix +- 6 days)
   * [x] Download theme
   * [] Install theme
-  * [] Test HTML helpers
+  * [x] Test HTML helpers
   * [] Seed with more real data
   * [x] Test some validations
   * [] Implement Extra Hours Creation
