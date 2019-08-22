@@ -101,6 +101,11 @@ Reminder:
 * HoursRecord.where(user_id: 6, day: "2019-08-07").sum("man_hour")
 * HoursRecord.where(status: ["rep_approved","rep_under_analysis"]).count
 
+### Yarn commands
+
+`yarn init`
+`yarn add @fortawesome/fontawesome-free@5.9.0`
+
 * **Todo**
   * [x] Add next_action_deadline and review_count fields on hours_record model \
   * [x] implement creation and update hooks for hours_record model \
