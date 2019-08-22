@@ -122,7 +122,7 @@ Reminder:
     * [x] Hours Validator
     * [x] Work Week Validator (need fix +- 6 days)
   * [x] Download theme
-  * [] Install theme
+  * [x] Install theme (Udemy Jackson Pires)
   * [x] Test HTML helpers
   * [] Seed with more real data
   * [x] Test some validations
