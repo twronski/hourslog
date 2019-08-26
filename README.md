@@ -106,6 +106,14 @@ Reminder:
 `yarn init`
 `yarn add @fortawesome/fontawesome-free@5.9.0`
 
+### Atuaizar / Fazer rodar a aplicacao em outro PC
+
+1 - `docker-compose run --rm bundle install`
+2 - `docker-compose run --rm bundle exec reails db:drop db:create db:migrate db:seed`
+3 -  `npm install`
+
+`yarn add @fortawesome/fontawesome-free@5.9.0`
+
 * **Todo**
   * [x] Add next_action_deadline and review_count fields on hours_record model \
   * [x] implement creation and update hooks for hours_record model \
