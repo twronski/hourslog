@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :activities
   resources :reports
   resources :projects
-  devise_for :users
+  devise_for :users , :skip => [:registrations]
 
   post '/hours_records_approval', to: 'hours_records#set_workflow'
 
