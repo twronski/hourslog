@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sub_skills
+  resources :main_skills
   resources :profiles
   resources :improductive_reasons
   resources :hours_records

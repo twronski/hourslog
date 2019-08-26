@@ -8,6 +8,7 @@ class HoursRecord < ApplicationRecord
   belongs_to :bay
   belongs_to :voltage_level
   belongs_to :improductive_reason, optional: true
+  belongs_to :main_skill
   has_many :comments, as: :commentable
 
   validates_presence_of :man_hour, message: "Não poe ser vazio"
@@ -19,19 +20,19 @@ class HoursRecord < ApplicationRecord
   before_create do
     self.status = "rep_under_analysis"
     self.number_of_revisions = 0
-    self.action_deadline = Date.today + 7
+    self.action_deadline = Date.today + CONFIG[:time_for_first_review_days]
   end
 
   def set_under_analisys
     self.status = "rep_under_analysis"
-    self.action_deadline = Date.today + 3
+    self.action_deadline = Date.today + CONFIG[:time_for_review_days]
     self.save
   end
 
   def set_under_revision
     self.status = "rep_under_revision"
     self.number_of_revisions += 1
-    self.action_deadline = Date.today + 3    
+    self.action_deadline = Date.today + CONFIG[:time_for_review_days]    
     self.save
   end
 
@@ -53,5 +54,10 @@ def set_rejected
     end
     self.save
   end
+
+  def is_last_revision?
+    self.number_of_revisions == CONFIG[:max_number_reviews]
+  end
+  
     
 end

@@ -1,0 +1,2 @@
+class SubSkill < ApplicationRecord
+end

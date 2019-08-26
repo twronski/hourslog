@@ -110,9 +110,13 @@ Reminder:
 
 1 - `docker-compose run --rm bundle install`
 2 - `docker-compose run --rm bundle exec reails db:drop db:create db:migrate db:seed`
-3 -  `npm install`
+3 - `npm install` or `yarn install`
 
 `yarn add @fortawesome/fontawesome-free@5.9.0`
+
+### Some Migrations
+* `docker-rails generate migration AddMainSkillProfile  main_skill:references`
+
 
 * **Todo**
   * [x] Add next_action_deadline and review_count fields on hours_record model \

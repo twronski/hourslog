@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_29_203604) do
+ActiveRecord::Schema.define(version: 2019_08_26_020354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,9 +52,11 @@ ActiveRecord::Schema.define(version: 2019_07_29_203604) do
     t.bigint "improductive_reason_id"
     t.integer "number_of_revisions"
     t.date "action_deadline"
+    t.bigint "main_skill_id"
     t.index ["activity_id"], name: "index_hours_records_on_activity_id"
     t.index ["bay_id"], name: "index_hours_records_on_bay_id"
     t.index ["improductive_reason_id"], name: "index_hours_records_on_improductive_reason_id"
+    t.index ["main_skill_id"], name: "index_hours_records_on_main_skill_id"
     t.index ["project_id"], name: "index_hours_records_on_project_id"
     t.index ["user_id"], name: "index_hours_records_on_user_id"
     t.index ["voltage_level_id"], name: "index_hours_records_on_voltage_level_id"
@@ -67,12 +69,20 @@ ActiveRecord::Schema.define(version: 2019_07_29_203604) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "main_skills", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string "full_name"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "role"
+    t.bigint "main_skill_id"
+    t.index ["main_skill_id"], name: "index_profiles_on_main_skill_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -86,6 +96,12 @@ ActiveRecord::Schema.define(version: 2019_07_29_203604) do
     t.datetime "updated_at", null: false
     t.index ["ct_id"], name: "index_projects_on_ct_id"
     t.index ["pm_id"], name: "index_projects_on_pm_id"
+  end
+
+  create_table "sub_skills", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -109,9 +125,11 @@ ActiveRecord::Schema.define(version: 2019_07_29_203604) do
   add_foreign_key "hours_records", "activities"
   add_foreign_key "hours_records", "bays"
   add_foreign_key "hours_records", "improductive_reasons"
+  add_foreign_key "hours_records", "main_skills"
   add_foreign_key "hours_records", "projects"
   add_foreign_key "hours_records", "users"
   add_foreign_key "hours_records", "voltage_levels"
+  add_foreign_key "profiles", "main_skills"
   add_foreign_key "profiles", "users"
   add_foreign_key "projects", "users", column: "ct_id"
   add_foreign_key "projects", "users", column: "pm_id"

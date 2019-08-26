@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sub Skills</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sub_skills.each do |sub_skill| %>
+      <tr>
+        <td><%= sub_skill.name %></td>
+        <td><%= link_to 'Show', sub_skill %></td>
+        <td><%= link_to 'Edit', edit_sub_skill_path(sub_skill) %></td>
+        <td><%= link_to 'Destroy', sub_skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sub Skill', new_sub_skill_path %>
