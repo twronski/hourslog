@@ -40,12 +40,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Aditional Gems
 # Devise for authentication
 gem 'devise'
-
-# Bootstrap for styling
-# gem 'bootstrap', '~> 4.3.1'
-
-# Add Jquery because bootstrap needs it
-gem 'jquery-rails'
+gem 'devise_invitable', '~> 2.0.0'
 
 # Add simple_form gem
 #gem 'simple_form'

@@ -117,6 +117,9 @@ Reminder:
 ### Some Migrations
 * `docker-rails generate migration AddMainSkillProfile  main_skill:references`
 
+### Devise Invitable
+* [Devise invitable](https://github.com/scambra/devise_invitable)
+* 
 
 * **Todo**
   * [x] Add next_action_deadline and review_count fields on hours_record model \
@@ -136,6 +139,7 @@ Reminder:
   * [x] Download theme
   * [x] Install theme (Udemy Jackson Pires)
   * [x] Test HTML helpers
+  * [] invitable devise
   * [] Seed with more real data
   * [x] Test some validations
   * [] Implement Extra Hours Creation
@@ -148,7 +152,6 @@ Reminder:
   * [] friendly_id
   * [] background_jobs
   * [] mailer
-  * [] invitable devise
   * [] Helpers in html
   * [] Bootsrap styling *   Buy Theme
   * [] Deployment
