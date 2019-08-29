@@ -46,6 +46,20 @@
     <%= form.collection_select(:voltage_level_id, VoltageLevel.all, :id, :name) %>
   </div>
 
+  <div class="field">
+    <%= form.label :main_skill %>
+    <%= form.collection_select(:main_skill_id, MainSkill.all, :id, :name) %>
+  </div>
+
+  <div class="field"> 
+    Fim de atividade (incluir anexo): <input type="checkbox" id="myCheck" onclick="myFunction()">
+  </div>
+
+  <div id="attach_file" style="display:none" class="field">
+    <%= form.label 'Anexos:' %>  
+    <%= form.file_field :record_doc %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -25,6 +25,7 @@ class HoursRecordsController < ApplicationController
   # POST /hours_records.json
   def create
     @hours_record = HoursRecord.new(hours_record_params)
+    @hours_record.record_doc.attach(params[:record_doc])
 
     respond_to do |format|
       if @hours_record.save
@@ -90,7 +91,7 @@ class HoursRecordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hours_record_params
-      params.require(:hours_record).permit(:day, :man_hour, :activity_id, :project_id, :user_id, :bay_id, :voltage_level_id)
+      params.require(:hours_record).permit(:day, :man_hour, :activity_id, :project_id, :user_id, :bay_id, :voltage_level_id, :main_skill_id,:record_doc)
     end
     
 end

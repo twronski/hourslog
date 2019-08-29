@@ -38,6 +38,12 @@
     <strong>Status:</strong>
     <%= @hours_record.status %>
   </p>
+  <p>
+    <% if @hours_record.record_doc.attached? %>
+      <%= link_to("Anexo: #{@hours_record.record_doc.filename}" , rails_blob_path(@hours_record.record_doc, disposition: "attachment")) %>
+    <% end %>
+  </p>
+
 
   <%= form_with url: '/hours_records_approval', scope: :hours_record ,  local: true do |f| %>
       

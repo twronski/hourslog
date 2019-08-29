@@ -10,6 +10,7 @@ class HoursRecord < ApplicationRecord
   belongs_to :improductive_reason, optional: true
   belongs_to :main_skill
   has_many :comments, as: :commentable
+  has_one_attached :record_doc
 
   validates_presence_of :man_hour, message: "Não poe ser vazio"
   validates :day, presence: true, creation_date: true
