@@ -64,3 +64,7 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<% content_for :javascripts do %>
+  <%= javascript_include_tag 'hours_records' %>
+<% end %>
