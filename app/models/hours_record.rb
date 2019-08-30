@@ -40,6 +40,9 @@ class HoursRecord < ApplicationRecord
   def set_approved
     self.status = "rep_approved"
     self.save
+    if self.errors.any?
+      logger.debug "Error message: #{self.errors.messages}"
+    end
   end
 
 def set_rejected
