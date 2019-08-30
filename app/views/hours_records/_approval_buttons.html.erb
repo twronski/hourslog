@@ -1,0 +1,8 @@
+  <%= form_with url: '/hours_records_approval', scope: :hours_record ,  local: true do |f| %>
+      
+      <%= f.hidden_field (:id) %>
+      <%= f.submit 'Reprovar Horas', class: 'btn btn-danger' %>
+      <%= f.submit 'Devolver para Revisão', class: 'btn btn-warning' %>
+      <%= f.submit 'Aprovar Horas', class: 'btn btn-success' %>
+      
+  <% end %>

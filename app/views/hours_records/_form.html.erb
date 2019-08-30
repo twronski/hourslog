@@ -60,6 +60,11 @@
     <%= form.file_field :record_doc %>
   </div>
 
+  <div class="field">
+    <p><%= form.label :description %></p>
+    <%= form.text_area :description, cols: 45, rows: 10 %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
