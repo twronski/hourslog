@@ -9,6 +9,27 @@
 # 1 - Create Users / Profiles
 require 'ffaker'
 
+puts "Create Main Skills..."
+
+MainSkill.create!(
+  name: 'Protection'
+)
+
+MainSkill.create!(
+  name: 'Control'
+)
+
+
+MainSkill.create!(
+  name: 'Eletrician'
+)
+
+MainSkill.create!(
+  name: 'RDP Specialist'
+)
+
+puts "Main Skills created succesfully..."
+
 puts "Create Fake Users..."
 
   25.times do
@@ -17,9 +38,11 @@ puts "Create Fake Users..."
       password: "123456",
       password_confirmation: "123456"
     )
-
-    @user.create_profile(
-        full_name: "#{FFaker::Name.first_name} #{FFaker::Name.last_name}"
+    @main_skill = MainSkill.all.sample
+    @user.create_profile!(
+        
+        full_name: "#{FFaker::Name.first_name} #{FFaker::Name.last_name}",
+        main_skill_id: @main_skill.id
     )
     
 
@@ -93,6 +116,22 @@ puts "Create Projects..."
   
 puts "Projects created succesfully..."
 
+
+  20.times do
+    @ct = User.all.sample
+    @pm = User.all.sample
+
+    Project.create!(
+      wbs: [*('a'..'z'),*('0'..'9')].shuffle[0,8].join,
+      name: [*('a'..'z'),*('0'..'9')].shuffle[0,10].join,
+      description: FFaker::Lorem.paragraph,
+      ct_id: @ct.id,
+      pm_id: @pm.id
+    )
+  end
+  
+puts "Projects created succesfully..."
+
 # 7 - Hours Records
 
 puts "Create Hour Records"
@@ -104,9 +143,10 @@ puts "Create Hour Records"
     @bay = Bay.all.sample
     @voltage_level = VoltageLevel.all.sample
     @improductive_reason = ImproductiveReason.all.sample
+    @main_skill = MainSkill.all.sample
 
     HoursRecord.create!(
-      day: Date.today - rand(10),
+      day: Date.today - rand(12),
       man_hour: rand * 3,
       activity_id: @activity.id,
       project_id: @project.id,
@@ -116,7 +156,8 @@ puts "Create Hour Records"
       status: 0,
       description: FFaker::HipsterIpsum.paragraph,
       improductive: 1,
-      improductive_reason_id: @improductive_reason.id
+      improductive_reason_id: @improductive_reason.id,
+      main_skill_id: @main_skill.id
       
     )
     puts "hour record created"
