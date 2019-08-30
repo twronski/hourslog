@@ -15,8 +15,7 @@ module HoursLog
     config.load_defaults 5.2
 
 
-    config.logger = Logger.new(STDOUT)
-    config.logger = Log4r::Logger.new("Application Log")
+    # config.logger = Logger.new(STDOUT)
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

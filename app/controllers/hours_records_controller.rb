@@ -1,5 +1,5 @@
 class HoursRecordsController < ApplicationController
-  before_action :set_hours_record, only: [:show, :edit, :update, :destroy]
+  before_action :set_hours_record, only: [:show, :edit, :update, :destroy, :show_workflow]
 
   # GET /hours_records
   # GET /hours_records.json
@@ -81,6 +81,11 @@ class HoursRecordsController < ApplicationController
     redirect_to @hours_record
 
   end
+
+  def show_workflow
+    
+  end
+  
   
 
   private
@@ -91,7 +96,7 @@ class HoursRecordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hours_record_params
-      params.require(:hours_record).permit(:day, :man_hour, :activity_id, :project_id, :user_id, :bay_id, :voltage_level_id, :main_skill_id,:record_doc)
+      params.require(:hours_record).permit(:day, :man_hour, :activity_id, :project_id, :user_id, :bay_id, :voltage_level_id, :main_skill_id,:record_doc, :description)
     end
     
 end

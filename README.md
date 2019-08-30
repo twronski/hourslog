@@ -139,9 +139,12 @@ Reminder:
   * [x] Download theme
   * [x] Install theme (Udemy Jackson Pires)
   * [x] Test HTML helpers
-  * [] invitable devise
+  * [x] invitable devise
+  * [] Complement Hour Log Model
+  * [] Create approval view based on show (partial)
   * [] Seed with more real data
   * [x] Test some validations
+  * [] Growl Notifications
   * [] Implement Extra Hours Creation
     * [] Models
     * [] Views
@@ -153,5 +156,5 @@ Reminder:
   * [] background_jobs
   * [] mailer
   * [] Helpers in html
-  * [] Bootsrap styling *   Buy Theme
+  * [x] Bootsrap styling *   Buy Theme
   * [] Deployment

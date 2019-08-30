@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   devise_for :users , :skip => [:registrations]
 
   post '/hours_records_approval', to: 'hours_records#set_workflow'
+  get '/hours_records_approval/:id', to: 'hours_records#show_workflow'
 
   root to: 'home#index'
   # get 'home/index'
