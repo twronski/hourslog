@@ -140,15 +140,15 @@ Reminder:
   * [x] Install theme (Udemy Jackson Pires)
   * [x] Test HTML helpers
   * [x] invitable devise
-  * [] Complement Hour Log Model
-  * [] Create approval view based on show (partial)
-  * [] Seed with more real data
+  * [x] Complement Hour Log Model
+  * [x] Create approval view based on show (partial)
   * [x] Test some validations
   * [] Growl Notifications
   * [] Implement Extra Hours Creation
     * [] Models
     * [] Views
     * [] Link with record creation
+  * [] Seed with more real data
   * [] Implement roles access using can can
   * [] Create Navigation
   * [] Will paginate

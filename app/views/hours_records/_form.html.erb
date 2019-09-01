@@ -1,4 +1,4 @@
-<%= form_with(model: hours_record, local: true) do |form| %>
+<%= form_with(model: hours_record, local: true, class: "form-inlin justify-content-center") do |form| %>
   <% if hours_record.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(hours_record.errors.count, "error") %> prohibited this hours_record from being saved:</h2>
@@ -16,14 +16,31 @@
     <%= form.date_select :day %>
   </div>
 
+
+  <div class="field">
+    <%= form.label :improductive %>
+    <%= form.check_box :improductive, {id: 'myCheck1', onclick:'myFunction1()'},  checked_value = "1", unchecked_value = "0" %>
+  </div>
+
+  <% if hours_record.improductive
+    disp = 'display:block'
+  else
+    disp = 'display:none'
+  end %>
+
+   <div id="imp_reason" style="<%= disp %>" class="field">
+    <%= form.label :improductive_reason %>
+    <%= form.collection_select(:improductive_reason_id, ImproductiveReason.all, :id, :name) %>
+  </div>
+
   <div class="field">
     <%= form.label :man_hour %>
     <%= form.text_field :man_hour %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :activity_id %>
-    <%= form.collection_select(:activity_id, Activity.all, :id, :name) %>
+    <%= form.collection_select(:activity_id, Activity.all, :id, :name, class: "form-control") %>
   </div>
 
   <div class="field">
