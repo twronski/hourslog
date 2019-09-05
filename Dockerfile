@@ -6,6 +6,8 @@ RUN apt-get update && apt-get install -qq -y --no-install-recommends \
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
         && apt-get install -y nodejs
 
+RUN apt update -qq && apt install -y nano
+
 # Seta nosso path
 ENV INSTALL_PATH /hourlog
 # Cria nosso diretório
