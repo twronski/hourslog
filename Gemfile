@@ -41,7 +41,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Devise for authentication
 gem 'devise'
 gem 'devise_invitable', '~> 2.0.0'
-
+gem "gritter", "1.2.0"
 # Add simple_form gem
 #gem 'simple_form'
 

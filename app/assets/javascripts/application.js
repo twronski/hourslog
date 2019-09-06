@@ -12,9 +12,10 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require jquery/dist/jquery.slim.min.js
+//= require jquery/dist/jquery.min.js
 //= require popper.js/dist/umd/popper.min.js
 //= require bootstrap/dist/js/bootstrap.bundle.min.js
 //= require jquery.easing/jquery.easing.min.js
 //= require sb-admin-2.min.js
 //= require @fortawesome/fontawesome-free/js/all.js
+//= require gritter
