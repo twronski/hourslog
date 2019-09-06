@@ -121,6 +121,8 @@ Reminder:
 * [Devise invitable](https://github.com/scambra/devise_invitable)
 * 
 
+* [Rails on Docker: Using Rails Encrypted Credentials with Docker](https://www.evernote.com/l/AOJ2WQUjnJJEf7Jfs62otkPP5nSf1yHH_Wo/)
+
 ### Assets precompile
  `docker-compose run --rm app bundle exec rake assets:precompile`
 
@@ -157,8 +159,9 @@ Reminder:
     * [] Evaluation
     * [] Documents
     * [] AccessTemplate
-  * [] Enum otimizations
-  * [] Eager load otimizations
+  * [] [Enum otimizations](https://www.evernote.com/l/AOJAnkuY5LRL_ayRjIaFfRSQkN2FCs3116Q/)
+  * [] [Eager load otimizations](https://www.evernote.com/l/AOKNvMDa-QpMHbEWl5oPMuOA1sEB4u62zhE/)
+  * [] [Eager load](https://www.evernote.com/l/AOLjdGIaZ05JBahCWtaxitFDOaMqIqBwhWI/)
   * [] Seed with more real data
   * [] Implement roles access using can can
   * [] Create Navigation
