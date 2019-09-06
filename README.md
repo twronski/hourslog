@@ -121,6 +121,9 @@ Reminder:
 * [Devise invitable](https://github.com/scambra/devise_invitable)
 * 
 
+### Assets precompile
+ `docker-compose run --rm app bundle exec rake assets:precompile`
+
 * **Todo**
   * [x] Add next_action_deadline and review_count fields on hours_record model \
   * [x] implement creation and update hooks for hours_record model \

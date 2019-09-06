@@ -83,5 +83,3 @@ test:
 production:
   <<: *default
   database: HoursLog_production
-  username: HoursLog
-  password: <%= ENV['HOURSLOG_DATABASE_PASSWORD'] %>
