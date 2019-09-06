@@ -151,6 +151,14 @@ Reminder:
     * [] Models
     * [] Views
     * [] Link with record creation
+  * [] Add some models [Evernote](https://www.evernote.com/l/AOIUL_QUFaBCaqE8BwTr28rZncwIMwygGls/)
+    * [] Companies
+    * [] Improvment Action
+    * [] Evaluation
+    * [] Documents
+    * [] AccessTemplate
+  * [] Enum otimizations
+  * [] Eager load otimizations
   * [] Seed with more real data
   * [] Implement roles access using can can
   * [] Create Navigation
