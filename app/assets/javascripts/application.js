@@ -19,3 +19,4 @@
 //= require sb-admin-2.min.js
 //= require @fortawesome/fontawesome-free/js/all.js
 //= require gritter
+//= require rateyo/min/jquery.rateyo.min.js

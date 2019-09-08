@@ -126,6 +126,9 @@ Reminder:
 ### Assets precompile
  `docker-compose run --rm app bundle exec rake assets:precompile`
 
+### Emet on Rails Visual Code
+[link](https://stackoverflow.com/questions/41051423/how-do-i-auto-format-ruby-or-erb-files-in-vs-code)
+
 * **Todo**
   * [x] Add next_action_deadline and review_count fields on hours_record model \
   * [x] implement creation and update hooks for hours_record model \
