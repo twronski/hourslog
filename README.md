@@ -126,8 +126,14 @@ Reminder:
 ### Assets precompile
  `docker-compose run --rm app bundle exec rake assets:precompile`
 
+### Credentials
+`docker-compose run --rm -e EDITOR=nano app bundle exec rails credentials:edit`
+
 ### Emet on Rails Visual Code
 [link](https://stackoverflow.com/questions/41051423/how-do-i-auto-format-ruby-or-erb-files-in-vs-code)
+
+### Create evaluations
+`u2.hours_records.select(:id, :project_id, :activity_id).distinct`
 
 * **Todo**
   * [x] Add next_action_deadline and review_count fields on hours_record model \
