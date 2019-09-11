@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'evaluation/rate'
   resources :sub_skills
   resources :main_skills
   resources :profiles
