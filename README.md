@@ -135,6 +135,9 @@ Reminder:
 ### Create evaluations
 `u2.hours_records.select(:id, :project_id, :activity_id).distinct`
 
+### Example of join table creation
+`rails g migration CreateJoinTableAuthorsBooks authors books`
+
 * **Todo**
   * [x] Add next_action_deadline and review_count fields on hours_record model \
   * [x] implement creation and update hooks for hours_record model \

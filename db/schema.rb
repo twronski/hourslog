@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_29_013828) do
+ActiveRecord::Schema.define(version: 2019_09_11_002603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,24 @@ ActiveRecord::Schema.define(version: 2019_08_29_013828) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
+  end
+
+  create_table "evaluations", force: :cascade do |t|
+    t.float "quality_ev"
+    t.float "time_ev"
+    t.float "organization_ev"
+    t.integer "status"
+    t.bigint "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_evaluations_on_profile_id"
+  end
+
+  create_table "evaluations_hours_records", id: false, force: :cascade do |t|
+    t.bigint "hours_record_id", null: false
+    t.bigint "evaluation_id", null: false
+    t.index ["evaluation_id", "hours_record_id"], name: "index_ev_hr"
+    t.index ["hours_record_id", "evaluation_id"], name: "index_hr_ev"
   end
 
   create_table "hours_records", force: :cascade do |t|
@@ -156,6 +174,7 @@ ActiveRecord::Schema.define(version: 2019_08_29_013828) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "evaluations", "profiles"
   add_foreign_key "hours_records", "activities"
   add_foreign_key "hours_records", "bays"
   add_foreign_key "hours_records", "improductive_reasons"

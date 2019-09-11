@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quality_ev: 1.5
+  time_ev: 1.5
+  organization_ev: 1.5
+  status: 1
+  profile: one
+
+two:
+  quality_ev: 1.5
+  time_ev: 1.5
+  organization_ev: 1.5
+  status: 1
+  profile: two
