@@ -1,9 +1,17 @@
 class EvaluationsController < ApplicationController
 
+def index
+  @evaluations = Evaluation.all
+end
+
+
 def edit
   @evaluation = Evaluation.find(params[:id])
 end
 
+def show
+  @evaluation = Evaluation.find(params[:id])
+end
 
 def update
   @evaluation = Evaluation.find(params[:id])
