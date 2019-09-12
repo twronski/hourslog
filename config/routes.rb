@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :activities
   resources :reports
   resources :projects
-  resources :evaluations, only: [:index, :show, :edit]
+  resources :evaluations
   
   devise_for :users , :skip => [:registrations]
 

@@ -29,7 +29,7 @@ $(function () {
     },
 
     onSet: function (rating, rateYoInstance) {
-      // $("#ev1").val(rating);
+      $("#evaluation_quality_ev").val(rating);
       alert("Rating is set to: " + rating);
     }
   });
@@ -49,7 +49,7 @@ $(function () {
     onInit: function (rating, rateYoInstance) {
  
       console.log("RateYo initialized! with " + rating);
-      // $("#ev1").val(rating);
+      // $("#evaluation_time_ev").val(rating);
     },
 
     onChange: function (rating, rateYoInstance) {
@@ -58,7 +58,7 @@ $(function () {
     },
 
     onSet: function (rating, rateYoInstance) {
-      // $("#ev1").val(rating);
+      $("#evaluation_time_ev").val(rating);
       alert("Rating is set to: " + rating);
     }
   });
@@ -78,7 +78,7 @@ $(function () {
     onInit: function (rating, rateYoInstance) {
  
       console.log("RateYo initialized! with " + rating);
-      // $("#ev1").val(rating);
+        
     },
 
     onChange: function (rating, rateYoInstance) {
@@ -87,7 +87,7 @@ $(function () {
     },
 
     onSet: function (rating, rateYoInstance) {
-      // $("#ev1").val(rating);
+      $("#evaluation_organization_ev").val(rating);
       alert("Rating is set to: " + rating);
     }
   });
