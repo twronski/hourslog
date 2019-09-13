@@ -21,7 +21,8 @@ $(function () {
     onInit: function (rating, rateYoInstance) {
  
       console.log("RateYo initialized! with " + rating);
-      // $("#ev1").val(rating);
+         $("#evaluation_quality_ev").val(rating, <%= @evaluation.quality_ev %>);
+        // $("#ev1").val(rating);
     },
 
     onChange: function (rating, rateYoInstance) {
@@ -51,6 +52,7 @@ $(function () {
     onInit: function (rating, rateYoInstance) {
  
       console.log("RateYo initialized! with " + rating);
+         $("#evaluation_time_ev").val(rating, <%= @evaluation.evaluation_time_ev %> );
       // $("#evaluation_time_ev").val(rating);
     },
 
@@ -81,6 +83,8 @@ $(function () {
     onInit: function (rating, rateYoInstance) {
  
       console.log("RateYo initialized! with " + rating);
+      
+      $("#evaluation_organization_ev").val(rating, <%= @evaluation.organization_ev %> );
         
     },
 
