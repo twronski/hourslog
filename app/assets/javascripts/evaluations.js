@@ -19,9 +19,9 @@ $(function () {
     },
 
     onInit: function (rating, rateYoInstance) {
+    console.log($("#evaluation_quality_ev").val());
  
-      console.log("RateYo initialized! with " + rating);
-         $("#evaluation_quality_ev").val(rating, <%= @evaluation.quality_ev %>);
+      $(this).rateYo("rating", $("#evaluation_quality_ev").val());
         // $("#ev1").val(rating);
     },
 
@@ -32,7 +32,7 @@ $(function () {
 
     onSet: function (rating, rateYoInstance) {
       $("#evaluation_quality_ev").val(rating);
-      alert("Rating is set to: " + rating);
+      // alert("Rating is set to: " + rating);
     }
   });
 
@@ -51,9 +51,7 @@ $(function () {
 
     onInit: function (rating, rateYoInstance) {
  
-      console.log("RateYo initialized! with " + rating);
-         $("#evaluation_time_ev").val(rating, <%= @evaluation.evaluation_time_ev %> );
-      // $("#evaluation_time_ev").val(rating);
+      $(this).rateYo("rating", $("#evaluation_time_ev").val());
     },
 
     onChange: function (rating, rateYoInstance) {
@@ -63,7 +61,7 @@ $(function () {
 
     onSet: function (rating, rateYoInstance) {
       $("#evaluation_time_ev").val(rating);
-      alert("Rating is set to: " + rating);
+      // alert("Rating is set to: " + rating);
     }
   });
 
@@ -82,10 +80,8 @@ $(function () {
 
     onInit: function (rating, rateYoInstance) {
  
-      console.log("RateYo initialized! with " + rating);
-      
-      $("#evaluation_organization_ev").val(rating, <%= @evaluation.organization_ev %> );
-        
+      $(this).rateYo("rating", $("#evaluation_organization_ev").val());
+            
     },
 
     onChange: function (rating, rateYoInstance) {
@@ -95,7 +91,7 @@ $(function () {
 
     onSet: function (rating, rateYoInstance) {
       $("#evaluation_organization_ev").val(rating);
-      alert("Rating is set to: " + rating);
+      // alert("Rating is set to: " + rating);
     }
   });
  
