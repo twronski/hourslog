@@ -181,12 +181,12 @@ Reminder:
     * [] Models
     * [] Views
     * [] Link with record creation
-  * [] Add some models [Evernote](https://www.evernote.com/l/AOIUL_QUFaBCaqE8BwTr28rZncwIMwygGls/)
-    * [] Companies
-    * [] Improvement Action
-    * [] Evaluation
-    * [] Documents
-    * [] AccessTemplate
+  * [x] Add some models [Evernote](https://www.evernote.com/l/AOIUL_QUFaBCaqE8BwTr28rZncwIMwygGls/)
+    * [x] Companies
+    * [x] Improvement Action
+    * [x] Evaluation
+    * [x] Documents
+    * [x] AccessTemplate
   * [] [Enum otimizations](https://www.evernote.com/l/AOJAnkuY5LRL_ayRjIaFfRSQkN2FCs3116Q/)
   * [] [Eager load otimizations](https://www.evernote.com/l/AOKNvMDa-QpMHbEWl5oPMuOA1sEB4u62zhE/)
   * [] [Eager load](https://www.evernote.com/l/AOLjdGIaZ05JBahCWtaxitFDOaMqIqBwhWI/)
@@ -199,4 +199,5 @@ Reminder:
   * [] mailer
   * [] Helpers in html
   * [x] Bootsrap styling *   Buy Theme
+  * [] Trabalhar mensagens de erros as notificações
   * [] Deployment

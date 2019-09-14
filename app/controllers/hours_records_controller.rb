@@ -4,7 +4,7 @@ class HoursRecordsController < ApplicationController
   # GET /hours_records
   # GET /hours_records.json
   def index
-    @hours_records = HoursRecord.all.includes(:activity, :bay, :improductive_reason, :main_skill, :project, :voltage_level, user: :profile)
+    @hours_records = HoursRecord.all.includes(:activity, :bay, :improductive_reason, :main_skill, :project, :voltage_level, :profile)
   end
 
   # GET /hours_records/1
