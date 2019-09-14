@@ -96,7 +96,7 @@ class HoursRecordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hours_record_params
-      params.require(:hours_record).permit(:day, :man_hour, :activity_id, :project_id, :user_id, :bay_id, :improductive_reason_id,
+      params.require(:hours_record).permit(:day, :man_hour, :activity_id, :project_id, :profile_id, :bay_id, :improductive_reason_id,
                                            :voltage_level_id, :main_skill_id,:record_doc, :description, :improductive )
     end
     

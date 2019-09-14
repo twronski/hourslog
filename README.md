@@ -94,11 +94,11 @@ Reminder:
 
 ### Query last week working hours
 
-* HoursRecord.where(user_id: 6, day: (Time.now.midnight - 6.day)..Time.now.midnight).sum("man_hour") -> Ultima semana
+* HoursRecord.where(profile_id: 6, day: (Time.now.midnight - 6.day)..Time.now.midnight).sum("man_hour") -> Ultima semana
 
 ### Query given day working hours
 
-* HoursRecord.where(user_id: 6, day: "2019-08-07").sum("man_hour")
+* HoursRecord.where(profile_id: 6, day: "2019-08-07").sum("man_hour")
 * HoursRecord.where(status: ["rep_approved","rep_under_analysis"]).count
 
 ### Yarn commands
