@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @suggestion_box.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @suggestion_box.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @suggestion_box.status %>
+</p>
+
+<%= link_to 'Edit', edit_suggestion_box_path(@suggestion_box) %> |
+<%= link_to 'Back', suggestion_boxes_path %>

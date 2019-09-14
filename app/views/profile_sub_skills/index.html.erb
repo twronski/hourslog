@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Profile Sub Skills</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Profile</th>
+      <th>Sub skill</th>
+      <th>Level</th>
+      <th>Status</th>
+      <th>Expiration date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profile_sub_skills.each do |profile_sub_skill| %>
+      <tr>
+        <td><%= profile_sub_skill.profile %></td>
+        <td><%= profile_sub_skill.sub_skill %></td>
+        <td><%= profile_sub_skill.level %></td>
+        <td><%= profile_sub_skill.status %></td>
+        <td><%= profile_sub_skill.expiration_date %></td>
+        <td><%= link_to 'Show', profile_sub_skill %></td>
+        <td><%= link_to 'Edit', edit_profile_sub_skill_path(profile_sub_skill) %></td>
+        <td><%= link_to 'Destroy', profile_sub_skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Profile Sub Skill', new_profile_sub_skill_path %>

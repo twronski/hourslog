@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Suggestion Boxes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @suggestion_boxes.each do |suggestion_box| %>
+      <tr>
+        <td><%= suggestion_box.name %></td>
+        <td><%= suggestion_box.description %></td>
+        <td><%= suggestion_box.status %></td>
+        <td><%= link_to 'Show', suggestion_box %></td>
+        <td><%= link_to 'Edit', edit_suggestion_box_path(suggestion_box) %></td>
+        <td><%= link_to 'Destroy', suggestion_box, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Suggestion Box', new_suggestion_box_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @access_template.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @access_template.description %>
+</p>
+
+<p>
+  <strong>Mandatory:</strong>
+  <%= @access_template.mandatory %>
+</p>
+
+<%= link_to 'Edit', edit_access_template_path(@access_template) %> |
+<%= link_to 'Back', access_templates_path %>

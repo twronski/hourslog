@@ -1,0 +1,2 @@
+class ImprovementAction < ApplicationRecord
+end

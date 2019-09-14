@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @improvement_action.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @improvement_action.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @improvement_action.status %>
+</p>
+
+<%= link_to 'Edit', edit_improvement_action_path(@improvement_action) %> |
+<%= link_to 'Back', improvement_actions_path %>

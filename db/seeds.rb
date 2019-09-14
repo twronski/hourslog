@@ -11,24 +11,36 @@ require 'ffaker'
 
 puts "Create Main Skills..."
 
-MainSkill.create!(
-  name: 'Protection'
-)
-
-MainSkill.create!(
-  name: 'Control'
-)
-
-
-MainSkill.create!(
-  name: 'Eletrician'
-)
-
-MainSkill.create!(
-  name: 'RDP Specialist'
-)
+@main_skills= ['Protection','Control','Eletrician','RDP Specialist']
+@main_skills.each do |main_skill|
+  MainSkill.create!(
+  name: main_skill
+  )
+end
 
 puts "Main Skills created succesfully..."
+
+puts "Create Sub Skills..."
+
+@sub_skills= ['English','UR','650','S2020', 'SAGE', 'AGILE']
+@sub_skills.each do |sub_skills|
+  SubSkill.create!(
+  name: sub_skills
+  )
+end
+
+puts "Sub Skills created succesfully..."
+
+puts "Create Main Equipment..."
+
+@main_equipments= ['C60','T60','C650','RDP', 'C264', 'Painel', 'IHM']
+@main_equipments.each do |main_equipment|
+  MainEquipment.create!(
+  name: main_equipment
+  )
+end
+
+puts "Main Equipment created succesfully..."
 
 puts "Create Fake Users..."
 
@@ -44,9 +56,8 @@ puts "Create Fake Users..."
         full_name: "#{FFaker::Name.first_name} #{FFaker::Name.last_name}",
         main_skill_id: @main_skill.id
     )
-    
-
   end
+
 puts "Fake users created succesfully..."
 
 # 2 - Create Activities
@@ -102,24 +113,8 @@ puts "Fake Voltage Levels created succesfully..."
 puts "Create Projects..."
 
   20.times do
-    @ct = User.all.sample
-    @pm = User.all.sample
-
-    Project.create!(
-      wbs: [*('a'..'z'),*('0'..'9')].shuffle[0,8].join,
-      name: [*('a'..'z'),*('0'..'9')].shuffle[0,10].join,
-      description: FFaker::Lorem.paragraph,
-      ct_id: @ct.id,
-      pm_id: @pm.id
-    )
-  end
-  
-puts "Projects created succesfully..."
-
-
-  20.times do
-    @ct = User.all.sample
-    @pm = User.all.sample
+    @ct = Profile.all.sample
+    @pm = Profile.all.sample
 
     Project.create!(
       wbs: [*('a'..'z'),*('0'..'9')].shuffle[0,8].join,
@@ -139,26 +134,27 @@ puts "Create Hour Records"
   50.times do
     @activity = Activity.all.sample
     @project = Project.all.sample
-    @user = User.all.sample
+    @profile = Profile.all.sample
     @bay = Bay.all.sample
     @voltage_level = VoltageLevel.all.sample
     @improductive_reason = ImproductiveReason.all.sample
     @main_skill = MainSkill.all.sample
+    @main_equipment = MainEquipment.all.sample
 
     HoursRecord.create!(
       day: Date.today - rand(12),
       man_hour: rand * 3,
       activity_id: @activity.id,
       project_id: @project.id,
-      user_id: @user.id,
+      profile_id: @profile.id,
       bay_id: @bay.id,
       voltage_level_id: @voltage_level.id,
       status: 0,
       description: FFaker::HipsterIpsum.paragraph,
       improductive: 1,
       improductive_reason_id: @improductive_reason.id,
-      main_skill_id: @main_skill.id
-      
+      main_skill_id: @main_skill.id,
+      main_equipment_id: @main_equipment.id
     )
     puts "hour record created"
   end

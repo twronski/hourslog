@@ -5,10 +5,11 @@ class CreateHoursRecords < ActiveRecord::Migration[5.2]
       t.decimal :man_hour, precision: 4, scale: 2
       t.references :activity, foreign_key: true
       t.references :project, foreign_key: true
-      t.references :user, foreign_key: true
+      t.references :profile, foreign_key: true
       t.references :bay, foreign_key: true
       t.references :voltage_level, foreign_key: true
-      t.integer :status
+      t.integer :status, :default => 0
+      #Ex:- :default =>''
       t.text :description
       t.integer :improductive
       # t.references :improductive_reason, foreign_key: true

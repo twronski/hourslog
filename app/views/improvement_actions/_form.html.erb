@@ -1,0 +1,32 @@
+<%= form_with(model: improvement_action, local: true) do |form| %>
+  <% if improvement_action.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(improvement_action.errors.count, "error") %> prohibited this improvement_action from being saved:</h2>
+
+      <ul>
+      <% improvement_action.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

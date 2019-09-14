@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :profile_sub_skills
+  resources :votes
+  resources :suggestion_boxes
+  resources :access_templates
+  resources :doc_templates
+  resources :main_equipments
+  resources :improvement_actions
+  resources :companies
   get 'evaluation/rate'
   resources :sub_skills
   resources :main_skills

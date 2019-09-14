@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_11_002603) do
+ActiveRecord::Schema.define(version: 2019_09_14_030646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "access_templates", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.boolean "mandatory"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -57,6 +65,22 @@ ActiveRecord::Schema.define(version: 2019_09_11_002603) do
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
   end
 
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.bigint "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_companies_on_profile_id"
+  end
+
+  create_table "doc_templates", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "evaluations", force: :cascade do |t|
     t.float "quality_ev"
     t.float "time_ev"
@@ -80,24 +104,26 @@ ActiveRecord::Schema.define(version: 2019_09_11_002603) do
     t.decimal "man_hour", precision: 4, scale: 2
     t.bigint "activity_id"
     t.bigint "project_id"
-    t.bigint "user_id"
+    t.bigint "profile_id"
     t.bigint "bay_id"
     t.bigint "voltage_level_id"
-    t.integer "status"
+    t.integer "status", default: 0
     t.text "description"
     t.boolean "improductive"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "improductive_reason_id"
-    t.integer "number_of_revisions"
+    t.integer "number_of_revisions", default: 0
     t.date "action_deadline"
     t.bigint "main_skill_id"
+    t.bigint "main_equipment_id"
     t.index ["activity_id"], name: "index_hours_records_on_activity_id"
     t.index ["bay_id"], name: "index_hours_records_on_bay_id"
     t.index ["improductive_reason_id"], name: "index_hours_records_on_improductive_reason_id"
+    t.index ["main_equipment_id"], name: "index_hours_records_on_main_equipment_id"
     t.index ["main_skill_id"], name: "index_hours_records_on_main_skill_id"
+    t.index ["profile_id"], name: "index_hours_records_on_profile_id"
     t.index ["project_id"], name: "index_hours_records_on_project_id"
-    t.index ["user_id"], name: "index_hours_records_on_user_id"
     t.index ["voltage_level_id"], name: "index_hours_records_on_voltage_level_id"
   end
 
@@ -108,10 +134,36 @@ ActiveRecord::Schema.define(version: 2019_09_11_002603) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "improvement_actions", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "main_equipments", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "main_skills", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "profile_sub_skills", force: :cascade do |t|
+    t.bigint "profile_id"
+    t.bigint "sub_skill_id"
+    t.integer "level"
+    t.integer "status"
+    t.date "expiration_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_profile_sub_skills_on_profile_id"
+    t.index ["sub_skill_id"], name: "index_profile_sub_skills_on_sub_skill_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -121,6 +173,12 @@ ActiveRecord::Schema.define(version: 2019_09_11_002603) do
     t.datetime "updated_at", null: false
     t.integer "role"
     t.bigint "main_skill_id"
+    t.text "bio"
+    t.float "evaluation_score", default: 0.0
+    t.float "document_score", default: 0.0
+    t.float "hours_submission_score", default: 0.0
+    t.float "improvement_score", default: 0.0
+    t.float "total_score", default: 0.0
     t.index ["main_skill_id"], name: "index_profiles_on_main_skill_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
@@ -139,6 +197,14 @@ ActiveRecord::Schema.define(version: 2019_09_11_002603) do
 
   create_table "sub_skills", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "suggestion_boxes", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -173,17 +239,30 @@ ActiveRecord::Schema.define(version: 2019_09_11_002603) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.integer "choice"
+    t.string "votable_type"
+    t.bigint "votable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["votable_type", "votable_id"], name: "index_votes_on_votable_type_and_votable_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "companies", "profiles"
   add_foreign_key "evaluations", "profiles"
   add_foreign_key "hours_records", "activities"
   add_foreign_key "hours_records", "bays"
   add_foreign_key "hours_records", "improductive_reasons"
+  add_foreign_key "hours_records", "main_equipments"
   add_foreign_key "hours_records", "main_skills"
+  add_foreign_key "hours_records", "profiles"
   add_foreign_key "hours_records", "projects"
-  add_foreign_key "hours_records", "users"
   add_foreign_key "hours_records", "voltage_levels"
+  add_foreign_key "profile_sub_skills", "profiles"
+  add_foreign_key "profile_sub_skills", "sub_skills"
   add_foreign_key "profiles", "main_skills"
   add_foreign_key "profiles", "users"
-  add_foreign_key "projects", "users", column: "ct_id"
-  add_foreign_key "projects", "users", column: "pm_id"
+  add_foreign_key "projects", "profiles", column: "ct_id"
+  add_foreign_key "projects", "profiles", column: "pm_id"
 end

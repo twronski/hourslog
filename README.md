@@ -138,6 +138,22 @@ Reminder:
 ### Example of join table creation
 `rails g migration CreateJoinTableAuthorsBooks authors books`
 
+### Some Models Generation
+* `docker-rails generate scaffold Company name:string address:string profile:references`
+* `docker-rails generate scaffold ImprovementAction title:string description:text status:integer`
+* `docker-rails generate scaffold MainEquipment name:string`
+* `docker-rails generate migration addMainEquipmentToHoursRecord main_equipment:references`
+* `docker-rails generate scaffold DocTemplate title:string description:text`
+* `docker-rails generate scaffold AccessTemplate name:string description:text mandatory:boolean`
+* `docker-rails generate scaffold SuggestionBox name:string description:text status:integer`
+* `docker-rails generate scaffold Vote choice:integer votable:references{polymorphic}`
+* `docker-rails generate scaffold ProfileSubSkill profile:references sub_skill:references level:integer status:integer expiration_date:date`
+* ``
+* ``
+* ``
+* ``
+* ``
+
 * **Todo**
   * [x] Add next_action_deadline and review_count fields on hours_record model \
   * [x] implement creation and update hooks for hours_record model \

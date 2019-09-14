@@ -1,0 +1,42 @@
+<%= form_with(model: profile_sub_skill, local: true) do |form| %>
+  <% if profile_sub_skill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profile_sub_skill.errors.count, "error") %> prohibited this profile_sub_skill from being saved:</h2>
+
+      <ul>
+      <% profile_sub_skill.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :profile_id %>
+    <%= form.text_field :profile_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sub_skill_id %>
+    <%= form.text_field :sub_skill_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :level %>
+    <%= form.number_field :level %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expiration_date %>
+    <%= form.date_select :expiration_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

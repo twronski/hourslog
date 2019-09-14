@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @profile_sub_skill.profile %>
+</p>
+
+<p>
+  <strong>Sub skill:</strong>
+  <%= @profile_sub_skill.sub_skill %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @profile_sub_skill.level %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @profile_sub_skill.status %>
+</p>
+
+<p>
+  <strong>Expiration date:</strong>
+  <%= @profile_sub_skill.expiration_date %>
+</p>
+
+<%= link_to 'Edit', edit_profile_sub_skill_path(@profile_sub_skill) %> |
+<%= link_to 'Back', profile_sub_skills_path %>
