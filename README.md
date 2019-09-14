@@ -160,14 +160,14 @@ Reminder:
   * [x] Complement Hour Log Model
   * [x] Create approval view based on show (partial)
   * [x] Test some validations
-  * [] Growl Notifications
+  * [x] Growl Notifications
   * [] Implement Extra Hours Creation
     * [] Models
     * [] Views
     * [] Link with record creation
   * [] Add some models [Evernote](https://www.evernote.com/l/AOIUL_QUFaBCaqE8BwTr28rZncwIMwygGls/)
     * [] Companies
-    * [] Improvment Action
+    * [] Improvement Action
     * [] Evaluation
     * [] Documents
     * [] AccessTemplate
@@ -175,7 +175,7 @@ Reminder:
   * [] [Eager load otimizations](https://www.evernote.com/l/AOKNvMDa-QpMHbEWl5oPMuOA1sEB4u62zhE/)
   * [] [Eager load](https://www.evernote.com/l/AOLjdGIaZ05JBahCWtaxitFDOaMqIqBwhWI/)
   * [] Seed with more real data
-  * [] Implement roles access using can can
+  * [] [Implement roles access using pundit](https://www.evernote.com/shard/s226/sh/2bd25d93-4933-4f87-b0c5-ec1498592f19/c3b0ba53e74c721675888bf4c3d4c5cf)
   * [] Create Navigation
   * [] Will paginate
   * [] friendly_id
