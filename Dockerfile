@@ -8,6 +8,12 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
 
 RUN apt update -qq && apt install -y nano
 
+RUN apt-get -qq update; \
+    apt-get install -qqy \
+        graphviz ruby-graphviz \
+        python-pydot python3-pydot python-pygraphviz python3-pygraphviz; \
+    rm -rf /var/lib/apt/lists/*
+
 # Seta nosso path
 ENV INSTALL_PATH /hourlog
 # Cria nosso diretório
