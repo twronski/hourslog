@@ -9,6 +9,7 @@ class HoursRecord < ApplicationRecord
   belongs_to :voltage_level
   belongs_to :improductive_reason, optional: true
   belongs_to :main_skill
+  belongs_to :main_equipment
   has_many :comments, as: :commentable
   has_one_attached :record_doc
 
@@ -17,7 +18,7 @@ class HoursRecord < ApplicationRecord
   validates :man_hour, presence: true, limit_man_hour: true
   validates_with WorkWeekValidator
   
-
+  # TODO: Passar para a migration
   before_create do
     self.status = "rep_under_analysis"
     self.number_of_revisions = 0
