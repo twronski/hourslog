@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @extra_hour.project %>
+</p>
+
+<p>
+  <strong>Execution date:</strong>
+  <%= @extra_hour.execution_date %>
+</p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @extra_hour.profile %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @extra_hour.status %>
+</p>
+
+<%= link_to 'Edit', edit_extra_hour_path(@extra_hour) %> |
+<%= link_to 'Back', extra_hours_path %>

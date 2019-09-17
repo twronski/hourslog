@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :extra_hours
   resources :profile_sub_skills
   resources :votes
   resources :suggestion_boxes

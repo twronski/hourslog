@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project: one
+  execution_date: 2019-09-17
+  profile: one
+  status: 1
+
+two:
+  project: two
+  execution_date: 2019-09-17
+  profile: two
+  status: 1

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_17_014150) do
+ActiveRecord::Schema.define(version: 2019_09_17_203019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,6 +106,17 @@ ActiveRecord::Schema.define(version: 2019_09_17_014150) do
     t.bigint "evaluation_id", null: false
     t.index ["evaluation_id", "hours_record_id"], name: "index_ev_hr"
     t.index ["hours_record_id", "evaluation_id"], name: "index_hr_ev"
+  end
+
+  create_table "extra_hours", force: :cascade do |t|
+    t.bigint "project_id"
+    t.date "execution_date"
+    t.bigint "profile_id"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_extra_hours_on_profile_id"
+    t.index ["project_id"], name: "index_extra_hours_on_project_id"
   end
 
   create_table "hours_records", force: :cascade do |t|
@@ -267,6 +278,8 @@ ActiveRecord::Schema.define(version: 2019_09_17_014150) do
   add_foreign_key "access_template_profiles", "profiles"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "evaluations", "profiles"
+  add_foreign_key "extra_hours", "profiles"
+  add_foreign_key "extra_hours", "projects"
   add_foreign_key "hours_records", "activities"
   add_foreign_key "hours_records", "bays"
   add_foreign_key "hours_records", "improductive_reasons"
