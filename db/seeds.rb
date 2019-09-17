@@ -13,7 +13,7 @@ puts "Create Main Skills..."
 
 @main_skills= ['Protection','Control','Eletrician','RDP Specialist']
 @main_skills.each do |main_skill|
-  MainSkill.create!(
+  MainSkill.find_or_create_by!(
   name: main_skill
   )
 end
@@ -24,7 +24,7 @@ puts "Create Sub Skills..."
 
 @sub_skills= ['English','UR','650','S2020', 'SAGE', 'AGILE']
 @sub_skills.each do |sub_skills|
-  SubSkill.create!(
+  SubSkill.find_or_create_by!(
   name: sub_skills
   )
 end
@@ -35,12 +35,23 @@ puts "Create Main Equipment..."
 
 @main_equipments= ['C60','T60','C650','RDP', 'C264', 'Painel', 'IHM']
 @main_equipments.each do |main_equipment|
-  MainEquipment.create!(
+  MainEquipment.find_or_create_by!(
   name: main_equipment
   )
 end
 
 puts "Main Equipment created succesfully..."
+
+puts "Create Company.."
+
+@companies = ['GE','Saved','Eltman','Projexa', 'Smart', 'Tremac', 'PSI']
+@companies.each do |company|
+  Company.find_or_create_by!(
+  name: company
+  )
+end
+
+puts "Company created succesfully..."
 
 puts "Create Fake Users..."
 
@@ -51,13 +62,15 @@ puts "Create Fake Users..."
       password_confirmation: "123456"
     )
     @main_skill = MainSkill.all.sample
+    @company = Company.all.sample
     @user.create_profile!(
         
         full_name: "#{FFaker::Name.first_name} #{FFaker::Name.last_name}",
-        main_skill_id: @main_skill.id
+        main_skill_id: @main_skill.id,
+        company_id: @company.id
     )
   end
-
+p User.all.sample
 puts "Fake users created succesfully..."
 
 # 2 - Create Activities
