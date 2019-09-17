@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  access_template: one
+  profile: one
+  status: 1
+  expiration_date: 2019-09-17
+
+two:
+  access_template: two
+  profile: two
+  status: 1
+  expiration_date: 2019-09-17

@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_14_030646) do
+ActiveRecord::Schema.define(version: 2019_09_17_014150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "access_template_profiles", force: :cascade do |t|
+    t.bigint "access_template_id"
+    t.bigint "profile_id"
+    t.integer "status"
+    t.date "expiration_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["access_template_id"], name: "index_access_template_profiles_on_access_template_id"
+    t.index ["profile_id"], name: "index_access_template_profiles_on_profile_id"
+  end
 
   create_table "access_templates", force: :cascade do |t|
     t.string "name"
@@ -68,10 +79,8 @@ ActiveRecord::Schema.define(version: 2019_09_14_030646) do
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.string "address"
-    t.bigint "profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["profile_id"], name: "index_companies_on_profile_id"
   end
 
   create_table "doc_templates", force: :cascade do |t|
@@ -140,6 +149,8 @@ ActiveRecord::Schema.define(version: 2019_09_14_030646) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "profile_id"
+    t.index ["profile_id"], name: "index_improvement_actions_on_profile_id"
   end
 
   create_table "main_equipments", force: :cascade do |t|
@@ -179,6 +190,8 @@ ActiveRecord::Schema.define(version: 2019_09_14_030646) do
     t.float "hours_submission_score", default: 0.0
     t.float "improvement_score", default: 0.0
     t.float "total_score", default: 0.0
+    t.bigint "company_id"
+    t.index ["company_id"], name: "index_profiles_on_company_id"
     t.index ["main_skill_id"], name: "index_profiles_on_main_skill_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
@@ -207,6 +220,8 @@ ActiveRecord::Schema.define(version: 2019_09_14_030646) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "profile_id"
+    t.index ["profile_id"], name: "index_suggestion_boxes_on_profile_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -248,8 +263,9 @@ ActiveRecord::Schema.define(version: 2019_09_14_030646) do
     t.index ["votable_type", "votable_id"], name: "index_votes_on_votable_type_and_votable_id"
   end
 
+  add_foreign_key "access_template_profiles", "access_templates"
+  add_foreign_key "access_template_profiles", "profiles"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "companies", "profiles"
   add_foreign_key "evaluations", "profiles"
   add_foreign_key "hours_records", "activities"
   add_foreign_key "hours_records", "bays"
@@ -259,10 +275,13 @@ ActiveRecord::Schema.define(version: 2019_09_14_030646) do
   add_foreign_key "hours_records", "profiles"
   add_foreign_key "hours_records", "projects"
   add_foreign_key "hours_records", "voltage_levels"
+  add_foreign_key "improvement_actions", "profiles"
   add_foreign_key "profile_sub_skills", "profiles"
   add_foreign_key "profile_sub_skills", "sub_skills"
+  add_foreign_key "profiles", "companies"
   add_foreign_key "profiles", "main_skills"
   add_foreign_key "profiles", "users"
   add_foreign_key "projects", "profiles", column: "ct_id"
   add_foreign_key "projects", "profiles", column: "pm_id"
+  add_foreign_key "suggestion_boxes", "profiles"
 end
