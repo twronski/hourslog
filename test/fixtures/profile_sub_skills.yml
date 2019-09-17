@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  profile: one
+  sub_skill: one
+  level: 1
+  status: 1
+  expiration_date: 2019-09-14
+
+two:
+  profile: two
+  sub_skill: two
+  level: 1
+  status: 1
+  expiration_date: 2019-09-14

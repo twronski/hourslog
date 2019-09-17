@@ -7,22 +7,6 @@ Things you may want to cover:
 
 * Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 ## Description
 
 Simple application to log work hours related to a project and type of activity  
@@ -94,11 +78,11 @@ Reminder:
 
 ### Query last week working hours
 
-* HoursRecord.where(user_id: 6, day: (Time.now.midnight - 6.day)..Time.now.midnight).sum("man_hour") -> Ultima semana
+* HoursRecord.where(profile_id: 6, day: (Time.now.midnight - 6.day)..Time.now.midnight).sum("man_hour") -> Ultima semana
 
 ### Query given day working hours
 
-* HoursRecord.where(user_id: 6, day: "2019-08-07").sum("man_hour")
+* HoursRecord.where(profile_id: 6, day: "2019-08-07").sum("man_hour")
 * HoursRecord.where(status: ["rep_approved","rep_under_analysis"]).count
 
 ### Yarn commands
@@ -135,6 +119,25 @@ Reminder:
 ### Create evaluations
 `u2.hours_records.select(:id, :project_id, :activity_id).distinct`
 
+### Example of join table creation
+`rails g migration CreateJoinTableAuthorsBooks authors books`
+
+### Some Models Generation
+* `docker-rails generate scaffold Company name:string address:string profile:references`
+* `docker-rails generate scaffold ImprovementAction title:string description:text status:integer`
+* `docker-rails generate scaffold MainEquipment name:string`
+* `docker-rails generate migration addMainEquipmentToHoursRecord main_equipment:references`
+* `docker-rails generate scaffold DocTemplate title:string description:text`
+* `docker-rails generate scaffold AccessTemplate name:string description:text mandatory:boolean`
+* `docker-rails generate scaffold SuggestionBox name:string description:text status:integer`
+* `docker-rails generate scaffold Vote choice:integer votable:references{polymorphic}`
+* `docker-rails generate scaffold ProfileSubSkill profile:references sub_skill:references level:integer status:integer expiration_date:date`
+* ``
+* ``
+* ``
+* ``
+* ``
+
 * **Todo**
   * [x] Add next_action_deadline and review_count fields on hours_record model \
   * [x] implement creation and update hooks for hours_record model \
@@ -157,22 +160,22 @@ Reminder:
   * [x] Complement Hour Log Model
   * [x] Create approval view based on show (partial)
   * [x] Test some validations
-  * [] Growl Notifications
+  * [x] Growl Notifications
   * [] Implement Extra Hours Creation
     * [] Models
     * [] Views
     * [] Link with record creation
-  * [] Add some models [Evernote](https://www.evernote.com/l/AOIUL_QUFaBCaqE8BwTr28rZncwIMwygGls/)
-    * [] Companies
-    * [] Improvment Action
-    * [] Evaluation
-    * [] Documents
-    * [] AccessTemplate
+  * [x] Add some models [Evernote](https://www.evernote.com/l/AOIUL_QUFaBCaqE8BwTr28rZncwIMwygGls/)
+    * [x] Companies
+    * [x] Improvement Action
+    * [x] Evaluation
+    * [x] Documents
+    * [x] AccessTemplate
   * [] [Enum otimizations](https://www.evernote.com/l/AOJAnkuY5LRL_ayRjIaFfRSQkN2FCs3116Q/)
   * [] [Eager load otimizations](https://www.evernote.com/l/AOKNvMDa-QpMHbEWl5oPMuOA1sEB4u62zhE/)
   * [] [Eager load](https://www.evernote.com/l/AOLjdGIaZ05JBahCWtaxitFDOaMqIqBwhWI/)
   * [] Seed with more real data
-  * [] Implement roles access using can can
+  * [] [Implement roles access using pundit](https://www.evernote.com/shard/s226/sh/2bd25d93-4933-4f87-b0c5-ec1498592f19/c3b0ba53e74c721675888bf4c3d4c5cf)
   * [] Create Navigation
   * [] Will paginate
   * [] friendly_id
@@ -180,4 +183,5 @@ Reminder:
   * [] mailer
   * [] Helpers in html
   * [x] Bootsrap styling *   Buy Theme
+  * [] Trabalhar mensagens de erros as notificações
   * [] Deployment

@@ -1,0 +1,22 @@
+<%= form_with(model: main_equipment, local: true) do |form| %>
+  <% if main_equipment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(main_equipment.errors.count, "error") %> prohibited this main_equipment from being saved:</h2>
+
+      <ul>
+      <% main_equipment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

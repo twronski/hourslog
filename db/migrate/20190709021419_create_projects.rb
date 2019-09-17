@@ -9,8 +9,8 @@ class CreateProjects < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_foreign_key :projects, :users, column: :ct_id
-    add_foreign_key :projects, :users, column: :pm_id
+    add_foreign_key :projects, :profiles, column: :ct_id
+    add_foreign_key :projects, :profiles, column: :pm_id
   end
 
 end

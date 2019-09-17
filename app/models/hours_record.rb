@@ -4,11 +4,14 @@ class HoursRecord < ApplicationRecord
   enum status: %i(rep_under_analysis rep_under_revision rep_aut_approved rep_approved rep_aut_rejected rep_rejected)
   belongs_to :activity
   belongs_to :project
-  belongs_to :user
+  belongs_to :profile
   belongs_to :bay
   belongs_to :voltage_level
   belongs_to :improductive_reason, optional: true
   belongs_to :main_skill
+  belongs_to :main_equipment
+  has_and_belongs_to_many :evaluations
+
   has_many :comments, as: :commentable
   has_one_attached :record_doc
 
@@ -17,7 +20,7 @@ class HoursRecord < ApplicationRecord
   validates :man_hour, presence: true, limit_man_hour: true
   validates_with WorkWeekValidator
   
-
+  # TODO: Passar para a migration
   before_create do
     self.status = "rep_under_analysis"
     self.number_of_revisions = 0

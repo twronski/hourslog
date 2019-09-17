@@ -9,7 +9,7 @@ class WorkWeekValidator < ActiveModel::Validator
         i = 0
         loop do
             i += 1
-            if HoursRecord.where(user_id: record.user_id, day: (record.day - i.day)).where.not(status: @reject_statuses).empty?
+            if HoursRecord.where(profile_id: record.profile_id, day: (record.day - i.day)).where.not(status: @reject_statuses).empty?
                break
             else
                 days_before += 1 
@@ -21,7 +21,7 @@ class WorkWeekValidator < ActiveModel::Validator
         i = 0
         loop do
             i += 1
-            if HoursRecord.where(user_id: record.user_id, day: (record.day + i.day)).where.not(status: @reject_statuses).empty?
+            if HoursRecord.where(profile_id: record.profile_id, day: (record.day + i.day)).where.not(status: @reject_statuses).empty?
                break
             else
                 days_after += 1 

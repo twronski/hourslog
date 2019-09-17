@@ -49,8 +49,9 @@
   </div>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+    <%= form.label :profile_id %>
+    <!-- <%= form.text_field :profile_id %> -->
+    <%= form.collection_select(:profile_id, Profile.all, :id, :full_name) %>
   </div>
 
   <div class="field">
