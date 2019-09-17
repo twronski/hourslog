@@ -10,6 +10,9 @@ class HoursRecord < ApplicationRecord
   belongs_to :improductive_reason, optional: true
   belongs_to :main_skill
   belongs_to :main_equipment
+  has_many :evaluations_hours_records
+  has_many :evaluations, through: :evaluations_hours_records
+
   has_many :comments, as: :commentable
   has_one_attached :record_doc
 
