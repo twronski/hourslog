@@ -33,6 +33,7 @@ class HoursRecord < ApplicationRecord
   validates :man_hour, presence: true, limit_man_hour: true
   validates_with WorkWeekValidator
   validates :man_hour, numericality: { greater_than_or_equal_to: 0.0, less_than_or_equal_to: 24.0  }
+  validate :date_not_after_today
   
   # TODO: Passar para a migration (done)
   before_create do
@@ -83,6 +84,9 @@ def set_rejected
   def date_not_after_today
 
     # TODO: Implement and indlude validator
+    if (self.day - Date.today)  > 0
+      errors.add(:day, "Data nao pode ser futura")
+    end
     
   end
     
