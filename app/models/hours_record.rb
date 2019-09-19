@@ -17,8 +17,10 @@ class HoursRecord < ApplicationRecord
   belongs_to :main_skill
   belongs_to :main_equipment
   has_and_belongs_to_many :evaluations
+  has_many :comments, as: :commentable, dependent: :destroy
 
-  has_many :comments, as: :commentable
+  accepts_nested_attributes_for :comments, reject_if: proc {|atributes|
+  atributes['body'].blank?}
 
   # Active Storage
 

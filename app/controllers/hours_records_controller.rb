@@ -15,10 +15,14 @@ class HoursRecordsController < ApplicationController
   # GET /hours_records/new
   def new
     @hours_record = HoursRecord.new
+    logger.info current_user.profile.id
+    @hours_record.comments.build(profile_id: current_user.profile.id)
   end
 
   # GET /hours_records/1/edit
   def edit
+    logger.info current_user.profile.id
+    @hours_record.comments.build(profile_id: current_user.profile.id)
   end
 
   # POST /hours_records
@@ -97,7 +101,8 @@ class HoursRecordsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def hours_record_params
       params.require(:hours_record).permit(:day, :man_hour, :activity_id, :project_id, :profile_id, :bay_id, :improductive_reason_id,
-                                           :voltage_level_id, :main_skill_id,:record_doc, :description, :improductive )
+                                           :voltage_level_id, :main_skill_id,:record_doc, :description, :improductive ,
+                                          comments_attributes: [:id, :body, :profile_id])
     end
     
 end

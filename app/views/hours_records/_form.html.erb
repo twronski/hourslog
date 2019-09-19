@@ -83,6 +83,12 @@
     <%= form.text_area :description, cols: 45, rows: 10 %>
   </div>
 
+  <%= form.fields_for :comments do |f| %>
+    <% if f.object.new_record? %>
+      <%= render 'comments_fields', f:f %>
+    <% end %>
+  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
