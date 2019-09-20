@@ -49,16 +49,17 @@
     <strong>Description:</strong>
     <%= hours_record.description %>
   </p>
+
  <% if hours_record.comments.any? %>
     <p>
       <strong>Comments:</strong>
       <% hours_record.comments.each do |comment| %>
-        <p>
-          <%= "Por: #{comment.profile.full_name} em #{comment.updated_at}"%>
-        <p>
-        <p>
-          <%= comment.body %>
-        </p>
+          <p>
+            <%= "Por: #{comment.profile.full_name} em #{comment.updated_at}"%>
+          <p>
+          <p>
+            <%= comment.body %>
+          </p>
       <% end %>
     </p>
  <% end %>

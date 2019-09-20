@@ -69,6 +69,11 @@
     <%= form.collection_select(:main_skill_id, MainSkill.all, :id, :name) %>
   </div>
 
+    <div class="field">
+    <%= form.label :main_equipment %>
+    <%= form.collection_select(:main_equipment_id, MainEquipment.all, :id, :name) %>
+  </div>
+
   <div class="field"> 
     Fim de atividade (incluir anexo): <input type="checkbox" id="myCheck" onclick="myFunction()">
   </div>
@@ -82,7 +87,7 @@
     <p><%= form.label :description %></p>
     <%= form.text_area :description, cols: 45, rows: 10 %>
   </div>
-
+<%# TODO: Passar teste de new record para dentro de comments_fields para também mostrar comandos existentes %>
   <%= form.fields_for :comments do |f| %>
     <% if f.object.new_record? %>
       <%= render 'comments_fields', f:f %>

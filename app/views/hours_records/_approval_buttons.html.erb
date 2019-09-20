@@ -1,16 +1,15 @@
-  <p>
-  <%= form_with url: '/hours_records_approval', scope: :hours_record ,  local: true do |f| %>
-      
-      <%= f.hidden_field (:id) %>
-      <div class="field">
-      <p>
-      <%= f.label 'Comentário' %>
-      </p>
-      <%= f.text_area 'comment', cols: 45, rows: 10 %>
-      </div>
-      <%= f.submit 'Reprovar Horas', class: 'btn btn-danger' %>
-      <%= f.submit 'Devolver para Revisão', class: 'btn btn-warning' %>
-      <%= f.submit 'Aprovar Horas', class: 'btn btn-success' %>
-      
+
+<%= form_with(model: hours_record, local: true, class: "form-inlin justify-content-center") do |form| %>
+
+  <%= form.fields_for :comments do |f| %>
+    <% if f.object.new_record? %>
+      <%= render 'comments_fields', f:f %>
+    <% end %>
   <% end %>
-  </p>
+
+  <div class="actions">
+      <%= form.submit 'Reprovar Horas', class: 'btn btn-danger' %>
+      <%= form.submit 'Devolver para Revisão', class: 'btn btn-warning' %>
+      <%= form.submit 'Aprovar Horas', class: 'btn btn-success' %>
+  </div>
+<% end %>
