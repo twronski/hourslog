@@ -88,10 +88,11 @@
     <%= form.text_area :description, cols: 45, rows: 10 %>
   </div>
 <%# TODO: Passar teste de new record para dentro de comments_fields para também mostrar comandos existentes %>
+
+  <%= render 'comments_list', hours_record: form.object%> 
+
   <%= form.fields_for :comments do |f| %>
-    <% if f.object.new_record? %>
       <%= render 'comments_fields', f:f %>
-    <% end %>
   <% end %>
 
   <div class="actions">

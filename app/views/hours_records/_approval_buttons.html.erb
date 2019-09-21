@@ -2,9 +2,7 @@
 <%= form_with(model: hours_record, local: true, class: "form-inlin justify-content-center") do |form| %>
 
   <%= form.fields_for :comments do |f| %>
-    <% if f.object.new_record? %>
       <%= render 'comments_fields', f:f %>
-    <% end %>
   <% end %>
 
   <div class="actions">

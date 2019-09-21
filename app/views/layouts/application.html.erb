@@ -27,12 +27,12 @@
       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <%= link_to  hours_records_path, class: "sidebar-brand d-flex align-items-center justify-content-center" do %>
           <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
           </div>
-          <div class="sidebar-brand-text mx-3">Grid Automation <sup>2</sup></div>
-        </a>
+          <div class="sidebar-brand-text mx-3">Grid Automation </div>
+        <% end %>
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
@@ -385,11 +385,11 @@
     <%= yield :javascripts %>
     
     <% if flash[:alert] %>
-      <%= js add_gritter(flash[:alert], title: "DailySmarty Alert", sticky: false) %>
+      <%= js add_gritter(flash[:alert], title: "Engenharia GA - Alerta", sticky: false) %>
     <% elsif flash[:error] %>
-      <%= js add_gritter(flash[:error], title: "DailySmarty Error", sticky: false) %>
+      <%= js add_gritter(flash[:error], title: "Engenharia GA  - Erro", sticky: false) %>
     <% else %>
-      <%= js add_gritter(flash[:notice], title: "DailySmarty Notification", sticky: false) %>
+      <%= js add_gritter(flash[:notice], title: "Engenharia GA -  Notificação", sticky: false) %>
     <% end %>
 
   </body>

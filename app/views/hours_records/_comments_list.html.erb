@@ -1,0 +1,15 @@
+ <% if hours_record.comments.any? %>
+    <p>
+      <strong>Comments:</strong>
+      <% hours_record.comments.each do |comment| %>
+        <% unless comment.new_record? %>
+            <p>
+                <%= "#{comment.profile.full_name} comentou #{comment.updated_at.strftime("em %d/%m/%Y às %I:%M%p :")}"%>
+            </p>
+            <p>
+                <%= comment.body %>
+            </p>
+        <% end %>
+      <% end %>
+    </p>
+ <% end %>

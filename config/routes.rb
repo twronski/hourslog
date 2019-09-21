@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   post '/hours_records_approval', to: 'hours_records#set_workflow'
   get '/hours_records_approval/:id', to: 'hours_records#show_workflow'
 
-  root to: 'hour_records#index'
+  root to: 'hours_records#index'
   # get 'home/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

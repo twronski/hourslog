@@ -1,5 +1,8 @@
+
+ <% if f.object.new_record? %>
   <div class="field">
     <%= f.hidden_field :profile_id %>
     <p><%= f.label 'Comentário' %></p>
     <%= f.text_area :body, cols: 45, rows: 10 %>
   </div>
+ <% end %>
