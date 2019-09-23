@@ -1,5 +1,5 @@
 <%= render 'view_records', hours_record: @hours_record %>
-<%= render 'approval_buttons', hours_record: @hours_record %>
+<%= render 'wf_form', hours_record: @hours_record %>
 
 <%= link_to 'Edit', edit_hours_record_path(@hours_record) %> |
 <%= link_to 'Back', hours_records_path %>
