@@ -17,6 +17,9 @@ May also include reports and statustics related to these logged hours
 
 `sudo docker run -it --rm --user "$(id -u):$(id -g)" -v "$PWD":/usr/src/app -w /usr/src/app ruby /bin/bash -c "gem install rails ; rails new testWindows --skip-bundle --database=postgresql"`
 
+### Generate Project with Docker - Windows
+`docker run -it --rm -v ${pwd}:/usr/src/app -w /usr/src/app ruby /bin/bash -c "gem install rails ; rails new testWindows --skip-bundle --database=postgresql"`
+
 ### Setup Database
 
 * Setup database.yml (user: postgres and host: postgres)
