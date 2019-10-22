@@ -1,1 +1,4 @@
-"id","name","description","mandatory","created_at","updated_at"
+id;name;description;mandatory;created_at;updated_at
+;M’nimo;ASO;;;
+;Plataforma GE;NR-10 Integracao;;;
+;Campo;22 documentos;;;

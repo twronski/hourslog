@@ -1,8 +1,18 @@
-"id","name","created_at","updated_at"
-1,Audible Lifter,2019-09-23 15:03:58,2019-09-23 15:03:58
-2,Performance Ferrule,2019-09-23 15:03:58,2019-09-23 15:03:58
-3,Electric Transmitter,2019-09-23 15:03:58,2019-09-23 15:03:58
-4,Electric HD Adapter,2019-09-23 15:03:58,2019-09-23 15:03:58
-5,Side Adapter,2019-09-23 15:03:58,2019-09-23 15:03:58
-6,Electric Kit,2019-09-23 15:03:58,2019-09-23 15:03:58
-7,Gel Side Transmitter,2019-09-23 15:03:58,2019-09-23 15:03:58
+id;name;created_at;updated_at
+1;LT Menor 230KV;;
+2;LT Maior ou Igual 230KV;;
+3;TIE  Menor  230KV;;
+4;TIE Maior ou Igual 230KV;;
+5;DJY Menor ou Igual 230KV;;
+6;DJ Y Maior que 230KV;;
+7;TR Menor 230KV;;
+8;TR Maior ou Igual 230KV;;
+9;Banco Capacitor Menor  230KV;;
+10;Banco Capacitor Maior ou Igual 230KV;;
+11;SAUX CA;;
+12;SAUX CC;;
+13;Barra Menor 230KV;;
+14;Barra Maior ou Igual 230KV;;
+15;Medicao Faturamento;;
+16;Alimentador menor igual 69KV;;
+17;Alimentador maior que 69KV;;
