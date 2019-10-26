@@ -8,4 +8,5 @@ class Profile < ApplicationRecord
   has_many :hours_records
   has_many :suggestion_boxes
   has_many :improvement_actions
+  has_many :evaluations, through: :evaluations_hours_records
 end

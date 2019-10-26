@@ -141,6 +141,9 @@ Reminder:
 * ``
 * ``
 
+### Get evaluations for a profile_id (example with '3')
+`Evaluation.joins(:hours_records).where(:hours_records  => {profile_id: 3})`
+
 * **Todo**
   * [x] Add next_action_deadline and review_count fields on hours_record model \
   * [x] implement creation and update hooks for hours_record model \
