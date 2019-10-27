@@ -14,7 +14,8 @@ class HoursRecordsController < ApplicationController
 
   # GET /hours_records/new
   def new
-    @hours_record = HoursRecord.new
+    # @hours_record = HoursRecord.new
+    @hours_record = current_user.profile.hours_records.build
     # logger.info current_user.profile.id
     # @hours_record.comments.build(profile_id: current_user.profile.id)
   end
