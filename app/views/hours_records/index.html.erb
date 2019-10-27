@@ -4,13 +4,13 @@
   <table class="table">
     <thead class="thead-light">
       <tr>
-        <th scope="col">Day</th>
-        <th scope="col">Man hour</th>
-        <th scope="col">Activity</th>
-        <th scope="col">Project</th>
-        <th scope="col">User</th>
-        <th scope="col">Bay</th>
-        <th scope="col">Voltage level</th>
+        <th scope="col">Dia</th>
+        <th scope="col">Horas</th>
+        <th scope="col">Atividade</th>
+        <th scope="col">Projeto</th>
+        <th scope="col">Profissional</th>
+        <th scope="col">Vão</th>
+        <th scope="col">Nivel de Tensao</th>
         <th scope="col">Status</th>
         <th colspan="4"></th>
       </tr>
@@ -30,6 +30,7 @@
           <td><%= hours_record.bay.name %></td>
           <td><%= hours_record.voltage_level.name %></td>
           <td><span class="<%= badge %>"><%= message %></span></td>
+          <%#TODO Put icon on the links %>
           <td><%= link_to 'Show', hours_record %></td>
           <td><%= link_to 'Edit', edit_hours_record_path(hours_record) %></td>
           <td><%= link_to 'Workflow', "/hours_records_approval/#{hours_record.id}" %></td>

@@ -1,52 +1,65 @@
+
+<%#TODO -> Create view helper to do this  %>
+<% badge = HoursRecordsHelper::STATUSES_HASH[hours_record.status]["badge"]%>
+<% message = HoursRecordsHelper::STATUSES_HASH[hours_record.status]["message"]%>
+
 <p id="notice"><%= notice %></p>
   <p>
-    <strong>Day:</strong>
+    <strong>Dia:</strong>
     <%= hours_record.day %>
   </p>
 
 
   <p>
-    <strong>Improductive:</strong>
+    <strong>Horas Improdutivas ? :</strong>
     <%= hours_record.improductive %>
   </p>
+  
+  <% if hours_record.improductive == true %>
+    <p>
+      <strong>Causa da Improdutividade:</strong>
+      <%= hours_record.improductive_reason.name %>
+    </p>
+  <% end %>
+
 
   <p>
-    <strong>Man hour:</strong>
+    <strong>Horas Trabalhadas:</strong>
     <%= hours_record.man_hour %>
   </p>
 
   <p>
-    <strong>Activity:</strong>
+    <strong>Atividade:</strong>
     <%= hours_record.activity.name %>
   </p>
 
   <p>
-    <strong>Project:</strong>
+    <strong>Projeto:</strong>
     <%= hours_record.project.name %>
   </p>
 
   <p>
-    <strong>User:</strong>
+    <strong>Profissional:</strong>
     <%= hours_record.profile.full_name %>
   </p>
 
   <p>
-    <strong>Bay:</strong>
+    <strong>Vão:</strong>
     <%= hours_record.bay.name %>
   </p>
 
   <p>
-    <strong>Voltage level:</strong>
+    <strong> Nivel de Tensão:</strong>
     <%= hours_record.voltage_level.name %>
   </p>
 
   <p>
-    <strong>Status:</strong>
-    <%= hours_record.status %>
+    <strong>Status: </strong>
+    <span class="<%= badge %>"><%= message %></span>
   </p>
 
   <p>
-    <strong>Description:</strong>
+    <strong>Descrição:</strong>
     <%= hours_record.description %>
   </p>
 
