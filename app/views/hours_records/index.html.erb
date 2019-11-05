@@ -31,10 +31,22 @@
           <td><%= hours_record.voltage_level.name %></td>
           <td><span class="<%= badge %>"><%= message %></span></td>
           <%#TODO Put icon on the links %>
-          <td><%= link_to 'Show', hours_record %></td>
-          <td><%= link_to 'Edit', edit_hours_record_path(hours_record) %></td>
-          <td><%= link_to 'Workflow', "/hours_records_approval/#{hours_record.id}" %></td>
-          <td><%= link_to 'Destroy', hours_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td> <%= link_to hours_record do %>
+                   <i class="fas fa-eye"></i>
+                 <% end %>
+            </td>
+          <td><%= link_to edit_hours_record_path(hours_record) do %>
+                  <i class="fas fa-edit"></i>
+              <% end %>
+          </td>
+          <td><%= link_to "/hours_records_approval/#{hours_record.id}" do %>
+                 <i class="fas fa-user-check"></i>
+              <% end %>
+          </td>
+          <td><%= link_to hours_record, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="fas fa-trash"></i>
+             <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
