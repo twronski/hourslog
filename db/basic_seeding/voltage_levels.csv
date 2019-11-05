@@ -1,13 +1,13 @@
 id;name;created_at;updated_at
 1;LT Menor 230KV;;
 2;LT Maior ou Igual 230KV;;
-3;TIE  Menor  230KV;;
+3;TIE Menor 230KV;;
 4;TIE Maior ou Igual 230KV;;
 ;DJY Menor ou Igual 230KV;;
 ;DJ Y Maior que 230KV;;
-;TR Menor 230KV;;
+;TR Menor230KV;;
 ;TR Maior ou Igual 230KV;;
-;Banco Capacitor Menor  230KV;;
+;Banco Capacitor Menor 230KV;;
 ;Banco Capacitor Maior ou Igual 230KV;;
 ;SAUX CA;;
 ;SAUX CC;;
