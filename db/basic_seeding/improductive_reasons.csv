@@ -1,8 +1,8 @@
 id;name;description;created_at;updated_at
 1;Externo (atribuido ao cliente);;;
 2;Erro de Projeto Executivo;;;
-3;Erro de Configuração;;;
+3;Erro de Configuracao;;;
 4;Problema de Equipamento (BUG);;;
 5;Problema Montagem PIS;;;
 6;Problema Montagem Painel;;;
-7;Mudança de Escopo;;;
+7;Mudanca de Escopo;;;
